@@ -1,0 +1,1741 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="San Juan Del Sur searchable directory of businesses. Each business is provided on a google map.  Local phone numbers, products, services and other contact information is also available for each business.">
+
+  <title>SJDS Directory - Search and Find anything in San Juan Del Sur</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GOOGLE FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,800%7COpen+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
+
+  <!--[if IE 9]>
+    <script src="js/media.match.min.js"></script>
+  <![endif]-->
+
+<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-65170447-1', 'auto');
+		ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+<div id="main-wrapper">
+  <header id="header">
+    <div class="header-top-bar">
+      <div class="container">
+        <!-- HEADER-LOGIN -->
+        <div class="header-login">
+
+          <a href="#" class=""><i class="fa fa-power-off"></i> Login</a>
+
+          <div>
+            <form action="#">
+              <input type="text" class="form-control" placeholder="Email">
+              <input type="password" class="form-control" placeholder="Password">
+              <input type="submit" class="btn btn-default" value="Login">
+              <a href="#" class="btn btn-link">Forgot Password?</a>
+            </form>
+          </div>
+
+        </div> <!-- END .HEADER-LOGIN -->
+
+        <!-- HEADER REGISTER -->
+        <div class="header-register">
+          <a href="#" class=""><i class="fa fa-plus-square"></i> Register</a>
+
+          <div>
+            <form action="#">
+              <input type="email" class="form-control" placeholder="Email">
+              <input type="email" class="form-control" placeholder="Repeat Email">
+              <input type="password" class="form-control" placeholder="Password">
+              <input type="submit" class="btn btn-default" value="Register">
+            </form>
+          </div>
+
+        </div> <!-- END .HEADER-REGISTER -->
+
+        <!-- HEADER-LOG0 -->
+        <div class="header-logo text-center">
+          <h2><a href="index.html">SJ<i class="fa fa-globe"></i>DS</a></h2>
+        </div>
+        <!-- END HEADER LOGO -->
+
+        <!-- HEADER-SOCIAL -->
+        <div class="header-social">
+          <a href="#">
+            <span><i class="fa fa-share-alt"></i></span>
+            <i class="fa fa-chevron-down social-arrow"></i>
+          </a>
+
+          <ul class="list-inline">
+            <li class="active"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+          </ul>
+        </div>
+        <!-- END HEADER-SOCIAL -->
+
+        <!-- HEADER-LANGUAGE -->
+        <div class="header-language">
+          <a href="#">
+            <span>EN</span>
+            <i class="fa fa-chevron-down"></i>
+          </a>
+
+          <ul class="list-unstyled">
+            <li class="active"><a href="#">EN</a></li>
+            <li><a href="#">FR</a></li>
+            <li><a href="#">PT</a></li>
+            <li><a href="#">IT</a></li>
+          </ul>
+        </div> <!-- END HEADER-LANGUAGE -->
+
+        <!-- CALL TO ACTION -->
+        <div class="header-call-to-action">
+          <a href="#" class="btn btn-default"><i class="fa fa-plus"></i> Add Listing</a>
+        </div><!-- END .HEADER-CALL-TO-ACTION -->
+
+      </div><!-- END .CONTAINER -->
+    </div>
+    <!-- END .HEADER-TOP-BAR -->
+
+    <!-- HEADER SEARCH SECTION -->
+    <div class="header-search slider-home">
+      <div class="header-search-bar">
+        <form action="/search-result.html" method="GET">
+
+          <div class="search-toggle">
+            <div class="container">
+              <div class="distance-range">
+                <p>
+                  <label for="amount-search">Distance:</label>
+                  <input type="text" id="amount-search">
+                </p>
+
+                <div id="slider-range-search"></div>
+              </div>  <!-- end #distance-range -->
+
+              <div class="distance-range">
+                <p>
+                  <label for="amount-search">Days published:</label>
+                  <input type="text" id="amount-search-day">
+                </p>
+
+                <div id="slider-range-search-day"></div>
+              </div>  <!-- end #distance-range -->
+
+              <p>Location:</p>
+              <div class="select-country">
+                <select class="" data-placeholder="-Select Country-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                </select>
+              </div>
+
+              <div class="region">
+                <input type="text" placeholder="-Region-">
+              </div>
+
+              <div class="address">
+                <input type="text" placeholder="-Address-">
+              </div>
+
+              <div class="category-search">
+                <select class="" data-placeholder="-Select category-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                </select>
+              </div>
+
+              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+
+            </div>
+          </div>  <!-- END .search-toggle -->
+
+          <div class="container">
+						<!-- <button class="toggle-btn" type="submit"><i class="fa fa-bars"></i></button>-->
+
+            <div class="search-value">
+              <div class="keywords">
+                <input type="text" autocomplete="off" class="form-control" id="search-keyword" name="q" placeholder="Search for something">
+              </div>
+							<!--
+              <div class="select-location">
+                <select class="" data-placeholder="-Select location-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                  <option value="option4">option 4</option>
+                </select>
+              </div>
+
+              <div class="category-search">
+                <select class="" data-placeholder="-Select category-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                  <option value="option4">option 4</option>
+                </select>
+              </div>
+							-->
+
+              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </div> <!-- END .CONTAINER -->
+        </form>
+      </div> <!-- END .header-search-bar -->
+
+      <div class="slider-content">
+
+        <div id="home-slider" class="owl-carousel owl-theme">
+
+          <div class="item">
+            <div class="slide-content">
+              <a href="#"><img src="img/slider-logo.png" alt=""></a>
+              <h1>Know <span>The</span> Place</h1>
+              <h2>For Anyone</h2>
+
+            </div>
+
+
+          </div>
+
+          <div class="item"><img src="img/content/home-slider-img-two.jpg" alt="">
+            <div class="slide-content">
+              <a href="#"><img src="img/slider-logo.png" alt=""></a>
+
+              <h1>Thou <span>Hast</span> Arrived</h1>
+              <h2>search above</h2>
+
+            </div>
+
+          </div>
+
+          <div class="item"><img src="img/content/home-slide-img.jpg" alt="">
+            <div class="slide-content">
+              <a href="#"><img src="img/slider-logo.png" alt=""></a>
+
+              <h1>Find <span>It</span> Now</h1>
+              <h2></h2>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="customNavigation">
+          <a class="btn prev"><i class="fa fa-angle-left"></i></a>
+          <a class="btn next"><i class="fa fa-angle-right"></i></a>
+        </div>
+
+      </div> <!-- END .slider-content -->
+    </div> <!-- END .SEARCH and slide-section -->
+
+    <div class="container">
+      <div class="header-nav-bar home-slide">
+        <nav>
+
+          <button><i class="fa fa-bars"></i></button>
+
+          <ul class="primary-nav list-unstyled">
+            <li class="bg-color"><a href="#">Home<i class="fa fa-angle-down"></i></a> </li>
+<!--
+            <li class=""><a href="#">Company<i class="fa fa-angle-down"></i></a>
+
+              <ul>
+                <li><a href="company-profile.html">Company(Profile)</a></li>
+                <li><a href="company-product.html">Company(Product)</a></li>
+                <li><a href="company-portfolio.html">Company(Portfolio)</a></li>
+                <li><a href="company-events.html">Company(Events)</a></li>
+                <li><a href="company-blog.html">Company(Blog)</a></li>
+                <li><a href="company-contact.html">Company(contact)</a></li>
+              </ul>
+
+            </li>
+
+            <li><a href="sample-page.html">Sample Page</a></li>
+						-->
+						<!-- <li><a href="shortcodes.html">Shortcodes</a></li> -->
+<!--
+            <li class="">
+              <a href="#">Blog<i class="fa fa-angle-down"></i></a>
+
+              <ul>
+                <li><a href="blog-list.html">Blog list</a></li>
+                <li><a href="blog-post.html">Blog-post</a></li>
+              </ul>
+
+            </li>
+
+            <li><a href="price-listing.html">Price Listing</a></li>
+						-->
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div> <!-- end .header-nav-bar -->
+    </div> <!-- end .container -->
+  </header> <!-- end #header -->
+
+  <div id="page-content" class="home-slider-content">
+    <div class="container">
+      <div class="home-with-slide">
+        <div class="row">
+
+          <div class="col-md-9 col-md-push-3">
+            <div class="page-content">
+
+              <div class="change-view">
+                <div class="filter-input">
+                </div>
+              </div> <!-- end .change-view -->
+
+
+              <div class="product-details">
+                <div class="tab-content">
+
+                  <div class="tab-pane active" id="all-categories">
+                    <h3>SJDS <span>Categories</span></h3>
+
+                    <div id="category-show" class="row clearfix">
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+
+                  <div class="tab-pane" id="advertisemnet">
+                    <h3>Advertisement <span class="comments">59</span></h3>
+
+                    <div class="row clearfix">
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-car"></i>Cars &amp; Motorcycles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-university"></i>Antiques</a>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-book"></i>Book</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-laptop"></i>Computers &amp; Tablets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Bikes</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="e-commerce">
+                    <h3>E-Commerce <span class="comments">99</span></h3>
+
+                    <div class="row clearfix">
+
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="education">
+                    <h3>Education <span class="comments">79</span></h3>
+
+                    <div class="row clearfix">
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-university"></i>Antiques</a>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-book"></i>Book</a>
+                        </div>
+
+                      </div>
+
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="entertainment">
+                    <h3>Entertainment <span class="comments">45</span></h3>
+
+                    <div class="row clearfix">
+
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="home-garder">
+                    <h3>Home &amp; Garden <span class="comments">78</span></h3>
+
+                    <div class="row clearfix">
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-university"></i>Antiques</a>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-book"></i>Book</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-car"></i>Cars &amp; Motorcycles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-laptop"></i>Computers &amp; Tablets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="industry">
+                    <h3>Industry <span class="comments">33</span></h3>
+
+                    <div class="row clearfix">
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="#"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="libraries-public">
+                    <h3>Libraries &amp; Public <span class="comments">66</span></h3>
+
+                    <div class="row clearfix">
+
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-book"></i>Book</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-car"></i>Cars &amp; Motorcycles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-laptop"></i>Computers &amp; Tablets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="#"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="real-estate">
+                    <h3>Real Estate <span class="comments">55</span></h3>
+
+                    <div class="row clearfix">
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-university"></i>Antiques</a>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-book"></i>Book</a>
+                        </div>
+
+                      </div>
+
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+
+                  <div class="tab-pane" id="resturants">
+                    <h3>Reasturants &amp; Pubs <span class="comments">66</span></h3>
+
+                    <div class="row clearfix">
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-university"></i>Antiques</a>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-book"></i>Book</a>
+                        </div>
+
+                      </div>
+
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paint-brush"></i>Creative &amp; Digital</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-female"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-bicycle"></i>Fashion</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-archive"></i>Furnishing</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-eye"></i>Health &amp; beauty</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-paper-plane-o"></i>Hobbies</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-empire"></i>Jewelry</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-cutlery"></i>Kitchen</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-sun-o"></i>Leisure</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-music"></i>Music</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-money"></i>Tickets</a>
+                        </div>
+
+                      </div>
+
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="category-item">
+
+                          <a href="search-result.html"><i class="fa fa-rocket"></i>Video Games &amp; Consoles</a>
+                        </div>
+
+                      </div>
+
+                      <div class="view-more">
+                        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>View More</a>
+                      </div>
+
+                    </div> <!-- end .row -->
+                  </div> <!-- end .tabe-pane -->
+                </div> <!-- end .tabe-content -->
+
+              </div> <!-- end .product-details -->
+            </div> <!-- end .page-content -->
+          </div>
+
+          <div class="col-md-3 col-md-pull-9 category-toggle">
+            <button><i class="fa fa-briefcase"></i></button>
+
+            <div class="page-sidebar">
+              <div class="custom-search">
+              </div> <!-- end .custom-search -->
+
+              <!-- Category accordion -->
+              <div id="categories">
+                <div class="accordion">
+                  <ul class="nav nav-tabs home-tab" role="tablist">
+										<div id="Featured_Business">
+									</div>
+<!--
+                    <li class="active">
+                      <a href="#all-categories"  role="tab" data-toggle="tab">All Categories
+                        <span>Display all sub-categories</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#advertisemnet" role="tab" data-toggle="tab">advertisement
+                        <span>Agencies, Marketing</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#e-commerce"  role="tab" data-toggle="tab">E-commerce
+                        <span>Boutiques, Shop</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#education" role="tab" data-toggle="tab">Education
+                        <span>Private School, Universities</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#entertainment" role="tab" data-toggle="tab">Entertainment
+                        <span>Sport, Toys, Travels</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#home-garder" role="tab" data-toggle="tab">Home &amp; Garden
+                        <span>Accessories, Furniture, Plants</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#industry" role="tab" data-toggle="tab">Industry
+                        <span>Accessories, Products, Services</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#libraries-public" role="tab" data-toggle="tab">Libraries &amp; Public
+                        <span>Libraries, Postal, Public Offices</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#real-estate" role="tab" data-toggle="tab">Real Estate
+                        <span>Apartments, Commercial, House</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#resturants" role="tab" data-toggle="tab">Resturants &amp; Pubs
+                        <span>Bars, Fast Food, Resturants</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#" role="tab" data-toggle="tab"><i class="fa fa-angle-right"></i>See More</a>
+
+                    </li>
+										-->
+                  </ul>
+                </div> <!-- end .accordion -->
+              </div> <!-- end #categories -->
+
+            </div> <!-- end .page-sidebar -->
+          </div> <!-- end grid layout-->
+        </div> <!-- end .row -->
+      </div> <!-- end .home-with-slide -->
+    </div> <!-- end .container -->
+  </div>  <!-- end #page-content -->
+
+
+  <div class="featured-listing" id= "featured-list">
+    <div class="container">
+      <div class="row clearfix">
+        <h2><strong>Featured</strong> Listing</h2>
+
+					<div id="featured_listings"></div>
+
+      </div>  <!-- end .row -->
+
+			<!--
+      <div class="discover-more">
+
+        <a class="btn btn-default text-center" href="#"><i class="fa fa-plus-square-o"></i>Discover More</a>
+      </div>
+			-->
+    </div>  <!-- end .container -->
+  </div>  <!-- end .featured-listing -->
+
+
+
+  <footer id="footer">
+    <div class="main-footer">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-3 col-sm-6">
+            <div class="about-globo">
+              <h3>About SJDS Directory</h3>
+
+              <div class="footer-logo">
+                <a href="#"><img src="img/footer_logo.png" alt=""></a>
+                <span></span> <!-- This content for overlay effect -->
+              </div>
+
+              <p>The SJDS Directory is making a concerted effort to provide a method to find each and every business that is in the SJDS area. We hope to help as many businesses in SJDS as humanly possible.</p>
+
+            </div> <!-- End .about-globo -->
+          </div> <!-- end Grid layout-->
+
+          <div class="col-md-3 col-sm-6">
+            <h3>Featured Listings</h3>
+
+						<div class="latest-post"></div>
+          </div> <!-- end Grid layout-->
+
+          <div class="col-md-3 col-sm-6 clearfix">
+            <div class="popular-categories">
+              <h3>Popular Categories</h3>
+
+              <ul>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i>Airport Transportation</a></li>
+                <li><a href="#"><i class="fa fa-paper-plane-o"></i>Upcoming Events</a></li>
+                <li><a href="#"><i class="fa fa-cogs"></i>Food &amp; Drinks</a></li>
+                <li><a href="#"><i class="fa fa-book"></i>Clothing</a></li>
+                <li><a href="#"><i class="fa fa-building-o"></i>Real Estate</a></li>
+              </ul>
+            </div> <!-- end .popular-categories-->
+          </div> <!-- end Grid layout-->
+
+          <div class="col-md-3 col-sm-6">
+            <div class="newsletter">
+              <h3>Newsletter</h3>
+
+              <form action="#">
+                <input type="Email" placeholder="Email address">
+                <button><i class="fa fa-plus"></i></button>
+              </form>
+
+              <h3>Keep In Touch</h3>
+
+              <ul class="list-inline">
+                <li><a href="http://www.facebook.com/sjdsdirectory"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/sjdsdirectory"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div> <!-- end .newsletter-->
+
+          </div> <!-- end Grid layout-->
+        </div> <!-- end .row -->
+      </div> <!-- end .container -->
+    </div> <!-- end .main-footer -->
+
+    <div class="copyright">
+      <div class="container">
+        <p>Copyright 2015 &copy; kharron.com. All rights reserved. Powered by  <a href="#">Kharron.com</a></p>
+
+        <ul class="list-inline">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+					<!--
+          <li><a href="#">Shortcodes</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Pricing</a></li>
+					-->
+          <li><a href="/contact-us.html">Contact</a></li>
+        </ul>
+      </div> <!-- END .container -->
+    </div> <!-- end .copyright-->
+  </footer> <!-- end #footer -->
+
+
+
+</div> <!-- end #main-wrapper -->
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.ba-outside-events.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/search.js"></script>
+<script>
+	$(document).ready(function(){
+		$.ajax({
+			'type': 'GET',
+			'url': 'http://api.sjdsdirectory.com/get_num_featured/1/',
+			'success': function(feat){
+				featured_json = JSON.parse(feat);
+				update_single_featured(featured_json[0][1]);
+			}
+		});
+		$.ajax({
+			'type': 'GET',
+			'url': 'http://api.sjdsdirectory.com/get_num_featured/12/',
+			'success': function(feat){
+				featured_json = JSON.parse(feat);
+				add_featured_businesses(featured_json);
+			}
+		});
+		$.ajax({
+			'type': 'GET',
+			'url': 'http://api.sjdsdirectory.com/get_num_featured/2/',
+			'success': function(feat){
+				featured_json = JSON.parse(feat);
+				update_footer_2(featured_json);
+			}
+		});
+	});
+	function update_footer_2(featured_json){
+			var html = '';
+			keys_arr = Object.keys(featured_json);
+			keys_arr.forEach(function(i){
+				html += '<div class="latest-post clearfix"> <div class="post-image"><a href="/company-profile.html?id=' + featured_json[i][1]['id'] + '"><img src="http://api.sjdsdirectory.com/media/business_images/' + featured_json[i][1]['id'] + '/' + featured_json[i][1]['photos'][0] + '" alt=""></a>';
+				html += '<p><span></span>Feat</p> </div> <h4><a href="/company-profile.html?id=' + featured_json[i][1]['id'] + '">' + featured_json[i][1]['name'] + '</a></h4>';
+				html += '<p>' + featured_json[i][1]['description'].slice(0,50) +'...</p> </div>';
+			});
+		$(".latest-post").replaceWith(html);
+	}
+
+	function update_single_featured(featured_json){
+		$("#Featured_Business").replaceWith('<div id="Featured_Business"></div>');
+		var image;
+		if (featured_json['photos']){
+			image = '<img style="width: 250px;" class="logo-image" src="http://api.sjdsdirectory.com/media/business_images/' + featured_json['id'] + '/' + featured_json['photos'][0] + '" />';
+		} else {
+			image = '';
+		}
+		$("#Featured_Business").append('<h2>' + featured_json['name'] + '</h2>' + image + '<br />' + featured_json['description']);
+	}
+
+
+	function add_featured_businesses(featured_json){
+		var html = '';
+		keys_arr = Object.keys(featured_json);
+		keys_arr.forEach(function(i){
+        html += '<div class="col-md-3 col-sm-4 col-xs-6">';
+				html += '<div class="single-product" style="min-height: 256px;"> <figure> <img src="http://api.sjdsdirectory.com/media/business_images/' + featured_json[i][1]['id'] + '/' + featured_json[i][1]['photos'][0] + '" alt=""> <div class="rating"> <ul class="list-inline">';
+				html += '<li><a href="#"><i class="fa fa-star"></i></a></li> <li><a href="#"><i class="fa fa-star"></i></a></li> <li><a href="#"><i class="fa fa-star"></i></a></li>';
+				html += '<li><a href="#"><i class="fa fa-star-half-o"></i></a></li> <li><a href="#"><i class="fa fa-star-o"></i></a></li> </ul>';
+				html += '<p>Featured</p> </div> <!-- end .rating -->';
+				html += '<figcaption>  <div class="read-more"> <a href="/company-profile.html?id=' + featured_json[i][1]['id'] + '"><i class="fa fa-angle-right"></i> Read More</a> </div> </figcaption>';
+				html += '</figure> <h4><a href="/company-profile.html?id=' + featured_json[i][1]["id"] + '">' + featured_json[i][1]['name'] + '</a></h4>';
+				//html += '<h5><a href="#">Category</a>, <a href="#">Another Category</a></h5>';
+				html += '</div> <!-- end .single-product -->';
+				html += '</div>';
+		});
+		$("#featured_listings").replaceWith(html);
+	}
+
+</script>
+</body>
+</html>

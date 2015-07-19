@@ -1,0 +1,40 @@
+<!doctype html>
+<html manifest="geosjds.appcache" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>SJDS Directory</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GOOGLE FONTS -->
+
+  <!--[if IE 9]>
+    <script src="js/media.match.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+	Get Geo Locate:
+	<br /><br />
+	<br /><br />
+	<br /><br />
+<button onClick="navigator.geolocation.getCurrentPosition(showPosition);">Llegas Posicion</button>
+<!-- Scripts -->
+<script>
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		}
+	function showPosition(position) {
+		alert("Latitude: " + position.coords.latitude + "\n Longitude: " + position.coords.longitude);
+	}
+</script>
+</body>
+</html>
