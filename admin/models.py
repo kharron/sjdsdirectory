@@ -35,6 +35,7 @@ class Business(models.Model):
 		twitter = models.CharField(blank=True, max_length=200)
 		email = models.CharField(blank=True, max_length=200)
 		take_credit = models.IntegerField(blank=True, default=0)
+		created_at = models.DateTimeField(auto_now_add=True)
 
 class BusinessEspanol(models.Model):
 		name = models.CharField(blank=True, max_length=200)
