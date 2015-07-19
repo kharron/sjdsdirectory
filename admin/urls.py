@@ -10,5 +10,6 @@ urlpatterns = patterns('',
 		url(r'^/cats/$', views.categories),
 		url(r'^/manage_featured/$', views.manage_featured),
 		url(r'^/cats/edit/(?P<cid>.+)/$', views.edit_category),
+		#url(r'^search/', include('haystack.urls')),
 )
 

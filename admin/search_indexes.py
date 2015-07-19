@@ -1,6 +1,6 @@
 import datetime
 from haystack import indexes
-from admin.models import Businesses
+from admin.models import Business
 
 class BusinessIndex(indexes.SearchIndex, indexes.Indexable):
 		text = indexes.CharField(document=True, use_template=true)
@@ -8,4 +8,5 @@ class BusinessIndex(indexes.SearchIndex, indexes.Indexable):
 		def get_model(self):
 				return Business
 
-		def 
+		def index_queryset(self):
+				return self.get_model().objects.all()

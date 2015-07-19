@@ -30,6 +30,8 @@ HAYSTACK_CONNECTIONS = {
 		},
 }
 
+HAYSTACK_ID_FIELD = 'my_id'
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -162,6 +164,7 @@ TEMPLATE_DIRS = (
 	'/www/sites/sjdsdirectory/howto/templates',
 	'/www/sites/sjdsdirectory/api/templates',
 	'/www/sites/sjdsdirectory/admin/templates',
+	'/www/sites/sjdsdirectory/search/templates',
 )
 
 INSTALLED_APPS = (
@@ -173,7 +176,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 		'south',
-		'haystack',
+		#'haystack',
 		'api',
 		'login',
 		'admin',
