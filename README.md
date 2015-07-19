@@ -11,5 +11,9 @@ A simple django based api for the san juan del sur businesses
 		<li>JRE, Jetty required</li>
 	</ul>
 </li>
-<li>Django Haystack</li>
+<li>Django Haystack
+	<ul>
+		<li>Really important: mod_wsgi will need to be compiled for python 2.7 or greater</li>
+	</ul>
+</li>
 </ul>
