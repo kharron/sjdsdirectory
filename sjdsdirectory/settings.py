@@ -176,7 +176,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 		'south',
-		#'haystack',
+		'haystack',
 		'api',
 		'login',
 		'admin',

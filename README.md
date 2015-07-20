@@ -16,4 +16,10 @@ A simple django based api for the san juan del sur businesses
 		<li>Really important: mod_wsgi will need to be compiled for python 2.7 or greater</li>
 	</ul>
 </li>
+<li>Removed mod_python (python.load) from Apache
+	<ul>
+		<li>This allowed mod_wsgi to use the correct python version</li>
+		<li>Re-compiling mod_python would be most optimal, although mod_python is no long a necessity</li>
+	</ul>
+</li>
 </ul>
