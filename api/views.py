@@ -97,7 +97,7 @@ def update_products(bid, products):
 						add_pc.save()
 
 def update_photos(request, bid):
-		""" Up to four business photos can be processed here.  There are four positions and the file'#' matters """
+		""" Up to four business photos can be processed here.  There are four positions and the name file'#' matters """
 		for i in range(1,5):
 				if request.FILES.has_key('file%s' % i):
 						name = request.FILES['file%s' % i].name

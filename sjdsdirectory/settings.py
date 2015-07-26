@@ -30,7 +30,7 @@ HAYSTACK_CONNECTIONS = {
 		},
 }
 
-HAYSTACK_ID_FIELD = 'my_id'
+HAYSTACK_ID_FIELD = 'id'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts

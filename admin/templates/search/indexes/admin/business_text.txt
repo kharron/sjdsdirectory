@@ -1,0 +1,5 @@
+
+{{ object.name }}
+{{ object.description }}
+{{ object.gps_lat }}
+{{ object.gps_long }}

@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+		url(r'^searchsolr/', include('haystack.urls')),
 		url(r'^', include('api.urls')),
 		url(r'^admin', include('admin.urls')),
     # Examples:

@@ -5,11 +5,17 @@ from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from haystack.query import SearchQuerySet
 from admin.models import *
 
 def index(request):
 		context = {}
 		return render(request, 'admin/admin.html', context)
+
+def testsolr(request):
+		a = SearchQuerySet().models(Business).filter(name="chic")
+		context = {'result': a}
+		return render(request, 'admin/solrtest.html', context) 
 
 def admin_espanol(request):
 		context = {}
