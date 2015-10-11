@@ -8087,3 +8087,17 @@ border-radius: 50%;
 	width: 500px;
 	height: 300px;
 }
+
+.cat_button {
+	margin-right: 10px;
+}
+
+.fish_button {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#fishform {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

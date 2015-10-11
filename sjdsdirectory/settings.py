@@ -21,16 +21,7 @@ DATABASES = {
     }
 }
 
-HAYSTACK_CONNECTIONS = {
-		'default': {
-		'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
-		'URL': 'http://127.0.0.1:8983/solr'
-		# ...or for multicore...
-		# 'URL': 'http://127.0.0.1:8983/solr/mysite',
-		},
-}
 
-HAYSTACK_ID_FIELD = 'id'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -176,7 +167,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 		'south',
-		'haystack',
 		'api',
 		'login',
 		'admin',

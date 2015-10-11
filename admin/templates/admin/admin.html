@@ -199,7 +199,7 @@
 					<h1>Admin <span>SJDS</span></h1>
 
 					<div class="heading-link">
-						<a href="#">Home</a>
+						<a href="/admin/">Admin Home</a>
 
 						<i>/</i>
 
@@ -219,45 +219,21 @@
 					<button><i class="fa fa-bars"></i></button>
 
 					<ul class="primary-nav list-unstyled">
-						<li><a href="#">Home<i class="fa fa-angle-down"></i></a>
-							<ul>
-								<li><a href="ihome-map-grid.html">Home-map(grid)</a></li>
-								<li><a href="home-map-list.html">Home-map(list)</a></li>
-								<li><a href="index.html">Home slider(view-1)</a></li>
-								<li><a href="home-category.html">Home slider(view-2)</a></li>
-							</ul>
-
+						<li><a href="/admin/">Admin Home</a>
 						</li>
 
-						<li class=""><a href="#">Company<i class="fa fa-angle-down"></i></a>
-
-							<ul>
-								<li><a href="company-profile.html">Company(Profile)</a></li>
-								<li><a href="company-product.html">Company(Product)</a></li>
-								<li><a href="company-portfolio.html">Company(Portfolio)</a></li>
-                <li><a href="company-events.html">Company(Events)</a></li>
-                <li><a href="company-blog.html">Company(Blog)</a></li>
-                <li><a href="company-contact.html">Company(contact)</a></li>
-							</ul>
-
+						<li class=""><a href="/admin/cats/">Categories</a>
 						</li>
-
-						<li><a href="sample-page.html">Sample Page</a></li>
-						<li><a href="shortcodes.html">Shortcodes</a></li>
 
 						<li class="">
-							<a href="#">Blog<i class="fa fa-angle-down"></i></a>
+							<a href="#">Events<i class="fa fa-angle-down"></i></a>
 
 							<ul>
-								<li><a href="blog-list.html">Blog list</a></li>
-                <li><a href="blog-post.html">Blog-post</a></li>
+								<li><a href="/admin/fish_prices/">Fish Prices</a></li>
 							</ul>
 
 						</li>
 
-						<li><a href="price-listing.html">Price Listing</a></li>
-						<li class="bg-color"><a href="about-us.html">About Us</a></li>
-						<li><a href="contact-us.html">Contact Us</a></li>
 					</ul>
 				</nav>
 			</div> <!-- end .container -->
@@ -281,7 +257,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<button type="submit" id="editbtn" class="btn btn-default">Edit Business</button>
-								<button type="submit" id="delbtn" class="btn btn-default">Delete Business</button>
+								<button type="submit" id="delbtn" class="btn btn-danger">Delete Business</button>
 							</div>
 						</div>
 					</form>
@@ -361,11 +337,16 @@
 								<input type="text" name="bLon" class="input-border form-control" id="bLon" placeholder="GPS Longitude" />
 							</div>
 						</div>
+						<div class="categories_div"></div>
+						</div>
 						<div class="form-group">
 							<label for="bCategory" class="col-sm-2 control-label">Category</label>
 							<div class="col-sm-10">
 								<!-- Available Categories -->
-								<div id="place_select"></div>
+								<div id="category_list"></div>
+								<input name="bCategory" id="place_select">
+								<input type="hidden" id="hidden-category" name="hidden_category" value="0" />
+								<br /><br />
 							</div>
 						</div>
 						<div class="form-group">
@@ -541,7 +522,7 @@
 
 	 function update_catlist(cat_json, div_name){
 		 keys_arr = Object.keys(cat_json);
-		$("#"+ div_name).replaceWith('<select id="' + div_name + '" name="bCategory" class="form-control input-border">');
+		 $("#"+ div_name).replaceWith('<select id="' + div_name + '" name="bCategory" class="form-control input-border"><option value="00">Select a category</option>');
 			keys_arr.forEach(function(i){
 			 $("#"+ div_name).append("<option value='" + i + "'>" + cat_json[i] + "</option>");
 			});
@@ -610,11 +591,20 @@
 				 }
 				 $("#bLat").val(biz_info['gps_lat']);
 				 $("#bLon").val(biz_info['gps_long']);
-				 $("#place_select").prepend('<option value="' + biz_info['cat_info']['id'] + '" selected>' + biz_info['cat_info']['name'] + '</option>');
+				 //$("#place_select").prepend('<option value="' + biz_info['cat_info']['id'] + '" selected>' + biz_info['cat_info']['name'] + '</option>');
 				 $("#hidden-bid").val(biz_info['id']); 
 				 $("#addbtn").attr("id", "updatebtn");
 				 $("#updatebtn").html('Update Business');
 				 $("#addform").attr("action", "/updatebusiness/")
+				 if (biz_info['cat_info']){
+					 // place categories above category drop down.
+					 keys_arr = Object.keys(biz_info['cat_info']['name']);
+					 keys_arr.forEach(function(i){
+						 $("#category_list").before('<a href="/delete_from_cat/' + biz_info['cat_info']['name'][i]['id'] + '/"><button class="cat_button btn btn-success" type="button"><i class="glyphicon glyphicon-remove"></i> ' + biz_info['cat_info']['name'][i]['name'] + '</button></a>'); 
+					 });
+					 $("#category_list").append("<br /><br />");
+					 
+				 }
 				 if (photo_arr){
 				   add_photos(photo_arr, biz_info['id']);
 				 }
@@ -626,6 +616,10 @@
 	$(document).ready(function(){
 		get_biz_list();
 		get_cat_list();
+
+		$("body").on("change", "#place_select", function(){
+			$("#hidden-category").attr("value",$("#place_select").val());
+		});
 
 		$("body").on("click", "#updatebtn2", function(e){
 			e.preventDefault();
@@ -642,13 +636,13 @@
 			}
 			var bLat = $("#bLat").val();
 			var bLon = $("#bLon").val();
-			var bCategory = $("#place_select").val();
+			var bCategory = $("#hidden_category").val();
 			var bPhone = $("#bPhone").val();
 			var bAltPhone = $("#bAltPhone").val();
 			var bAltPhone2 = $("#bAltPhone2").val();
 			var bProducts = $("#bProducts").val();
 			var bid = $("#hidden-bid").val();
-			data = "bid=" + bid + "&bName=" + bName + "&bDesc=" + bDesc + "&bEmail=" + bEmail + "&bWebsite=" + bWebsite + "&bLat=" + bLat + "&bLon=" + bLon + "&bCategory=" + bCategory + "&bPhone=" + bPhone + "&bAltPhone=" + bAltPhone + "&bAltPhone2=" + bAltPhone + "&bProducts=" + bProducts + "&facebook=" + facebook + "&twitter=" + twitter + "&bTakeCredit=" + take_credit;
+			data = "bid=" + bid + "&bName=" + bName + "&bDesc=" + bDesc + "&bEmail=" + bEmail + "&bWebsite=" + bWebsite + "&bLat=" + bLat + "&bLon=" + bLon + "&hidden_category=" + bCategory + "&bPhone=" + bPhone + "&bAltPhone=" + bAltPhone + "&bAltPhone2=" + bAltPhone + "&bProducts=" + bProducts + "&facebook=" + facebook + "&twitter=" + twitter + "&bTakeCredit=" + take_credit;
 			$.ajax({
 				"type": "POST",
 				"url": "http://api.sjdsdirectory.com/updatebusiness/",
@@ -661,7 +655,6 @@
 
 	  $("body").on("click", "#addbtn2", function(e){
 			e.preventDefault();
-			alert("Adding");
 			var bName = encodeURIComponent($("#bName").val());
 			var bDesc = encodeURIComponent($("#bDesc").val());
 			var bEmail = $("#bEmail").val();
@@ -692,6 +685,29 @@
 			bid = $("#place_select2").val();
 			get_biz(bid);
 		})
+
+		$("#delbtn").click(function(e){
+		// Delete a particular business
+			e.preventDefault();
+			var select = document.getElementById( "place_select2" );
+			if (confirm('Are you sure you want to delete')) {
+			var bid = select.options[select.selectedIndex].value;
+			$.ajax({
+				"type": "GET",
+				"url": "http://api.sjdsdirectory.com/deletebusiness/" + bid + "/",
+				"success": function(msg){
+					if (msg == 1){
+						alert("Deleted");
+						get_biz_list();
+					} else {
+						alert(msg);
+					}
+				}
+			})
+			} else {
+				//Do Nothing
+			}
+		});
 	});
 </script>
 <script>

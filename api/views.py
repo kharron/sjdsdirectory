@@ -23,20 +23,21 @@ def add_business(request):
 				phone = request.POST['bPhone']
 				alt_phone = request.POST['bAltPhone']
 				alt_phone2 = request.POST['bAltPhone2']
-				cat1 = request.POST['bCategory']
+				if request.POST['hidden_category'] != '00': 
+						cat1 = request.POST['hidden_category']
 				lon = request.POST['bLon']
 				lat = request.POST['bLat']
 				website = request.POST['bWebsite']
 				facebook = request.POST['facebook']
 				twitter = request.POST['twitter']
-				take_credit = request.POST['bTakeCredit']
+				take_credit = request.POST.get('bTakeCredit', 0)
 				email = request.POST['bEmail']
 				products = request.POST['bProducts']
 				if products.find(","):
 						products = request.POST['bProducts'].split(",")
 						loggit(products)
 				bid = add_business_info(bName, desc, lon, lat, website, phone, alt_phone, alt_phone2, email, facebook, twitter, take_credit)
-				if bid:
+				if bid and cat1 and cat1 != '00':
 						add_cat = add_to_cat(bid, cat1) 
 				if products and bid:
 						update_products(bid, products)
@@ -52,7 +53,8 @@ def update_business(request):
 				phone = request.POST['bPhone']
 				alt_phone = request.POST['bAltPhone']
 				alt_phone2 = request.POST['bAltPhone2']
-				cat1 = request.POST['bCategory']
+				if request.POST['hidden_category'] != '00': 
+						cat1 = request.POST['hidden_category']
 				lon = request.POST['bLon']
 				lat = request.POST['bLat']
 				website = request.POST['bWebsite']
@@ -68,8 +70,8 @@ def update_business(request):
 						products = request.POST['bProducts'].split(",")
 						loggit(products)
 				update_business_info(bid, bName, desc, lon, lat, website, phone, alt_phone, alt_phone2, email, facebook, twitter, take_credit)
-				if bid:
-						update_to_cat(bid, cat1) 
+				if bid and cat1 and cat1 != '00':
+						catupdate = update_to_cat(bid, cat1) 
 				if products and bid:
 						update_products(bid, products)
 				if request.FILES:
@@ -169,7 +171,7 @@ def get_photos(bid):
 def get_products(bid):
 		""" Retrieves products for a specific business """
 		sql = 'select p.id, p.name from admin_products p right join admin_productsbusiness pb on pb.product_id = p.id where pb.business_id = %s'
-		products = ProductsBusiness.objects.raw(sql, bid)
+		products = ProductsBusiness.objects.raw(sql, [bid])
 		prod = []
 		for p in products: 
 				prod.append(p.name)
@@ -179,10 +181,19 @@ def get_business(bid):
 		b = Business.objects.get(pk=bid)
 		c = CategoriesBusiness.objects.filter(business_id=bid)
 		cat = {}
-		if c:
+		if c and len(c):
 				cat['id'] = c[0].business_id
-				catname = Categories.objects.get(pk=c[0].name)
-				cat['name'] = catname.name
+				cat['name'] = {}
+				i = 0
+				for category in c:
+						try:
+								catname = Categories.objects.get(id=category.name)
+								cat['name'][i] = {}
+								cat['name'][i]['name'] = catname.name
+								cat['name'][i]['id'] = category.id
+								i = i+1
+						except:
+								pass
 		prod = get_products(bid)
 		pics = get_photos(bid)
 		biz = {}
@@ -209,9 +220,11 @@ def update_to_cat(bid, cat1):
 		if c:
 				c.name = cat1
 				c[0].save()
+				return "old"
 		else:
 				c = CategoriesBusiness(business_id=bid, name=cat1)
 				c.save()
+				return "new"
 		return 1
 
 
@@ -222,7 +235,7 @@ def add_to_cat(bid, cat1):
 		return 1
 
 def get_categories_for_biz(bid):
-		cat = Categories.objects.raw("select c.id, c.name from admin_categories c Inner Join admin_categoriesbusiness cb on cb.name = c.id where cb.business_id = %s" % bid)
+		cat = Categories.objects.raw("select c.id, c.name from admin_categories c Inner Join admin_categoriesbusiness cb on cb.name = c.id where cb.business_id = %s" % [bid])
 
 def generate_catlist():
 		# Generates a list of available categories
@@ -295,7 +308,7 @@ def get_business_category(request, category=None):
 		if category:
 				cat = Categories.objects.filter(name=category)
 				if cat: 
-						cb = CategoriesBusiness.objects.raw('Select b.id, b.name from admin_business b Inner Join admin_categoriesbusiness cb on cb.business_id = b.id where cb.name = %s' % cat[0].id)
+						cb = CategoriesBusiness.objects.raw('Select b.id, b.name from admin_business b Inner Join admin_categoriesbusiness cb on cb.business_id = b.id where cb.name = %s' % [cat[0].id])
 						for biz in cb:
 								bizs[biz.id] = {}
 								bizs[biz.id] = biz.name
@@ -310,7 +323,7 @@ def product_lookup(request, product_id=None):
 						prod = Products.objects.filter(name=product_id)
 						if prod:
 								product_id = prod[0].id 
-				bizs = Business.objects.raw("select b.id, b.name, b.description from admin_business b Right Join admin_productsbusiness pb on b.id = pb.business_id where pb.product_id = '%s'" % product_id) 
+				bizs = Business.objects.raw("select b.id, b.name, b.description from admin_business b Right Join admin_productsbusiness pb on b.id = pb.business_id where pb.product_id = %s" % product_id) 
 				biz = {}
 				for b in bizs:
 						biz[b.id] = {}
@@ -328,7 +341,7 @@ def category_lookup(request, category_name=None):
 				cat = Categories.objects.filter(name=category_name)
 				if cat:
 						catid = cat[0].id
-						cb = Business.objects.raw('Select b.id, b.name from admin_business b Inner Join admin_categoriesbusiness cb on cb.business_id = b.id where cb.name = %s', catid)
+						cb = Business.objects.raw('Select b.id, b.name from admin_business b Inner Join admin_categoriesbusiness cb on cb.business_id = b.id where cb.name = %s', [catid])
 						biz = {}
 						if cb:
 								for b in cb:
@@ -356,6 +369,14 @@ def add_category(request):
 				c.save()
 				return HttpResponse('updated')
 		return HttpResponse('false')
+
+@csrf_exempt
+def delete_from_cat(request, catbiz_id=None):
+		if catbiz_id:
+				c = CategoriesBusiness.objects.get(pk=catbiz_id)
+				c.delete()
+		return HttpResponseRedirect('/admin/')
+		
 
 @csrf_exempt
 def delete_category(request):
@@ -418,7 +439,7 @@ def search_products(keyword):
 		keyword = "%" + keyword + "%"
 		products_sql = 'select b.product_id, p.name from admin_products p inner join admin_productsbusiness b on p.id = b.product_id where p.name like %s order by p.name asc limit 0,8'
 		cursor = connection.cursor()
-		cursor.execute(products_sql, keyword)
+		cursor.execute(products_sql, [keyword])
 		products = cursor.fetchall()
 		product_list = []
 		for p in products:
@@ -432,7 +453,7 @@ def search_all(keyword):
 		keyword = '%' + keyword + '%'
 		Sql = "select id, name, description from admin_business where id in (select b.business_id from admin_products a inner join admin_productsbusiness b on b.product_id = a.id where a.name like %s) or name like %s"
 		cursor = connection.cursor()
-		cursor.execute(Sql, (keyword,keyword))
+		cursor.execute(Sql, (keyword,[keyword]))
 		prods = cursor.fetchall()
 		return prods
 
@@ -585,7 +606,7 @@ def loggit(msg):
 		logtime = cTime.strftime("%H:%M:%S")
 		logfile = "/www/sites/sjdsdirectory/sjdsdirectory/logfile.log"
 		with open(logfile, "a") as log:
-				log.write(logtime + ": " + msg)
+				log.write(logtime + ": " + msg + "\n")
 				log.close()
 
 def category_search(request, category=None):
@@ -697,6 +718,27 @@ def delete_business_es(request):
 		return HttpResponseRedirect('0')
 
 @csrf_exempt
+def delete_business(request, bid=None):
+		''' Permanently delete a business from the database '''
+		if bid:
+				c = CategoriesBusiness.objects.filter(business_id=bid)
+				c.delete()
+				d = ProductsBusiness.objects.filter(business_id=bid)
+				d.delete()
+				e = PhotosBusiness.objects.filter(business_id=bid)
+				e.delete()
+				f = ProductImages.objects.filter(business_id=bid)
+				f.delete()
+				g = BusinessImages.objects.filter(business_id=bid)
+				g.delete()
+				h = ProductImages.objects.filter(business_id=bid)
+				h.delete()
+				i = Business.objects.get(pk=bid)
+				i.delete()
+				return HttpResponse('1')
+		return HttpResponse('0') 
+
+@csrf_exempt
 def translate_business(request):
 		""" Take the spanish version of the business and create an english version """
 		if request.method == "POST":
@@ -736,3 +778,24 @@ def get_english_from_name(request):
 						bizDict['products'] = get_products(biz[0].id)
 		biz_json = json.dumps(bizDict)
 		return HttpResponse(biz_json)
+
+def fish_prices(request):
+        now = datetime.datetime.now()
+        today = now.date()
+        fp = FishPrices.objects.filter(fish_date=today)
+        fishies = []
+        i = 0
+        fishdict = {}
+        for f in fp:
+                fishdict[i] = {}
+                fishdict_new = fishdict[i]
+                fishdict_new['name_english'] = f.fishname_english
+                fishdict_new['name_spanish'] = f.fishname_spanish
+                fishdict_new['price'] = f.price
+                fishdict_new['description'] = f.fish_description
+                fishdict_new['date'] = f.fish_date.strftime("%Y-%m-%d")
+                fishdict_new['id'] = f.id
+                i = i + 1
+        fishJson = json.dumps(fishdict)
+        return HttpResponse(fishJson)
+

@@ -432,6 +432,9 @@ $("document").ready(function($){
     }
 
   });
+	// For now remove the ability to carousel
+	$("a.btn.prev").remove();
+	$("a.btn.next").remove();
 });
 
 

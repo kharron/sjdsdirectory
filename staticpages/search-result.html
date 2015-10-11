@@ -68,7 +68,7 @@
 
         <!-- HEADER-LOG0 -->
         <div class="header-logo text-center">
-          <h2><a href="index.html">SJ<i class="fa fa-globe"></i>DS</a></h2>
+					<a href="index.html"><img height="40px" src="img/sjds-logo.svg" /></a>
         </div>
         <!-- END HEADER LOGO -->
 
@@ -1355,6 +1355,7 @@
             </div> <!-- end .location-details -->
 
 						<div id="c">
+							<div id="fishies"></div>
 							<div id="Featured_Business"><div>
             </div> <!-- end #categories -->
 
@@ -1373,10 +1374,9 @@
 
           <div class="col-md-3 col-sm-6">
             <div class="about-globo">
-              <h3>About the Directory</h3>
+              <h3>About SJDS Directory</h3>
 
               <div class="footer-logo">
-                <a href="#"><img src="img/footer_logo.png" alt=""></a>
                 <span></span> <!-- This content for overlay effect -->
               </div>
 
@@ -1386,31 +1386,9 @@
           </div> <!-- end Grid layout-->
 
           <div class="col-md-3 col-sm-6">
-            <h3>Featured Businesses</h3>
+            <h3>Featured Listings</h3>
 
-            <div class="latest-post clearfix">
-              <div class="post-image">
-                <img src="img/content/latest_post_1.jpg" alt="">
-
-                <p><span>12</span>Sep</p>
-              </div>
-
-              <h4><a href="#">Featured Business Here</a></h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-
-            <div class="latest-post clearfix">
-              <div class="post-image">
-                <img src="img/content/latest_post_2.jpg" alt="">
-
-                <p><span>09</span>Sep</p>
-              </div>
-
-              <h4><a href="#">Featured Business Here</a></h4>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
+						<div class="latest-post"></div>
           </div> <!-- end Grid layout-->
 
           <div class="col-md-3 col-sm-6 clearfix">
@@ -1418,10 +1396,10 @@
               <h3>Popular Categories</h3>
 
               <ul>
-                <li><a href="#"><i class="fa fa-shopping-cart"></i>E-commerce</a></li>
-                <li><a href="#"><i class="fa fa-paper-plane-o"></i>Entertainment</a></li>
-                <li><a href="#"><i class="fa fa-cogs"></i>Industry</a></li>
-                <li><a href="#"><i class="fa fa-book"></i>Libraries &amp; Public Office</a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i>Airport Transportation</a></li>
+                <li><a href="#"><i class="fa fa-paper-plane-o"></i>Upcoming Events</a></li>
+                <li><a href="#"><i class="fa fa-cogs"></i>Food &amp; Drinks</a></li>
+                <li><a href="#"><i class="fa fa-book"></i>Clothing</a></li>
                 <li><a href="#"><i class="fa fa-building-o"></i>Real Estate</a></li>
               </ul>
             </div> <!-- end .popular-categories-->
@@ -1439,8 +1417,8 @@
               <h3>Keep In Touch</h3>
 
               <ul class="list-inline">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="http://www.facebook.com/sjdsdirectory"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/sjdsdirectory"><i class="fa fa-twitter"></i></a></li>
               </ul>
             </div> <!-- end .newsletter-->
 
@@ -1451,17 +1429,17 @@
 
     <div class="copyright">
       <div class="container">
-        <p>Copyright 2015 &copy; sjds directory. All rights reserved. Powered by  <a href="http://www.kharron.com">Kharron.com</a></p>
+        <p>Copyright 2015 &copy; senorcoders.com. All rights reserved. Powered by  <a href="#">Senorcoders.com</a></p>
 
         <ul class="list-inline">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
 					<!--
           <li><a href="#">Shortcodes</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Pricing</a></li>
 					-->
-          <li><a href="#">Contact</a></li>
+          <li><a href="/contact-us.html">Contact</a></li>
         </ul>
       </div> <!-- END .container -->
     </div> <!-- end .copyright-->
@@ -1480,6 +1458,7 @@
 <script src="js/owl.carousel.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/search.js"></script>
+<script src="js/featured.js"></script>
 <script>
 
 		function getUrlVars() {
@@ -1575,53 +1554,7 @@
 		} else if (getUrlVars()['q']){
 			get_search_results();
 		}
-		$.ajax({
-			'type': 'GET',
-			'url': 'http://api.sjdsdirectory.com/get_num_featured/1/',
-			'success': function(feat){
-				featured_json = JSON.parse(feat);
-				update_single_featured(featured_json[0][1]);
-			}
-		});
-		$.ajax({
-			'type': 'GET',
-			'url': 'http://api.sjdsdirectory.com/get_num_featured/12/',
-			'success': function(feat){
-				featured_json = JSON.parse(feat);
-				add_featured_businesses(featured_json);
-			}
-		});
 	});
-
-	function update_single_featured(featured_json){
-		$("#Featured_Business").replaceWith('<div id="Featured_Business"></div>');
-		var image;
-		if (featured_json['photos']){
-			image = '<img style="width: 250px;" class="logo-image" src="http://api.sjdsdirectory.com/media/business_images/' + featured_json['id'] + '/' + featured_json['photos'][0] + '" />';
-		} else {
-			image = '';
-		}
-		$("#Featured_Business").append('<h2>' + featured_json['name'] + '</h2>' + image + '<br />' + featured_json['description']);
-	}
-
-
-	function add_featured_businesses(featured_json){
-		var html = '';
-		keys_arr = Object.keys(featured_json);
-		keys_arr.forEach(function(i){
-        html += '<div class="col-md-3 col-sm-4 col-xs-6">';
-				html += '<div class="single-product" style="min-height: 256px;"> <figure> <img src="http://api.sjdsdirectory.com/media/business_images/' + featured_json[i][1]['id'] + '/' + featured_json[i][1]['photos'][0] + '" alt=""> <div class="rating"> <ul class="list-inline">';
-				html += '<li><a href="#"><i class="fa fa-star"></i></a></li> <li><a href="#"><i class="fa fa-star"></i></a></li> <li><a href="#"><i class="fa fa-star"></i></a></li>';
-				html += '<li><a href="#"><i class="fa fa-star-half-o"></i></a></li> <li><a href="#"><i class="fa fa-star-o"></i></a></li> </ul>';
-				html += '<p>Featured</p> </div> <!-- end .rating -->';
-				html += '<figcaption>  <div class="read-more"> <a href="/company-profile.html?id=' + featured_json[i][1]['id'] + '"><i class="fa fa-angle-right"></i> Read More</a> </div> </figcaption>';
-				html += '</figure> <h4><a href="/company-profile.html?id=' + featured_json[i][1]["id"] + '">' + featured_json[i][1]['name'] + '</a></h4>';
-				//html += '<h5><a href="#">Category</a>, <a href="#">Another Category</a></h5>';
-				html += '</div> <!-- end .single-product -->';
-				html += '</div>';
-		});
-		$("#featured_listings").replaceWith(html);
-	}
 </script>
 
 </body>

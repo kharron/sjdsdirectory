@@ -13,6 +13,8 @@ urlpatterns = patterns('',
 		url(r'^editcat/$', views.edit_category),
 		url(r'^updatecat/$', views.update_category),
 		url(r'^deletecat/$', views.delete_category),
+		url(r'^delete_from_cat/(?P<catbiz_id>.+)/$', views.delete_from_cat),
+		url(r'^deletebusiness/(?P<bid>.+)/$', views.delete_business),
 
 		#Category Stuff
 		url(r'^get_cat_from_biz/$', views.get_categories_for_biz),
@@ -40,6 +42,8 @@ urlpatterns = patterns('',
 		url(r'^updatebusiness/$', views.update_business),
 
 		url(r'^get_english_from_name/$', views.get_english_from_name),
+
+		url(r'^fish_prices/$', views.fish_prices),
     # Examples:
     # url(r'^$', 'sjdsdirectory.views.home', name='home'),
     # url(r'^sjdsdirectory/', include('sjdsdirectory.foo.urls')),

@@ -70,3 +70,10 @@ class SearchKeywords(models.Model):
 		keyword_phrase = models.CharField(blank=True, max_length=200)
 		created_at = models.DateTimeField(auto_now_add=True)
 
+class FishPrices(models.Model):
+        fishname_english = models.CharField(blank=True, max_length=64)
+        fishname_spanish = models.CharField(blank=True, max_length=64)
+        fish_description = models.CharField(blank=True, max_length=254)
+        price = models.CharField(blank=True, max_length=16)
+        fish_date = models.DateField()
+

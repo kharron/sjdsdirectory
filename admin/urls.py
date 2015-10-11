@@ -11,5 +11,10 @@ urlpatterns = patterns('',
 		url(r'^/manage_featured/$', views.manage_featured),
 		url(r'^/cats/edit/(?P<cid>.+)/$', views.edit_category),
 		url(r'^/testsolr/$', views.testsolr),
+		url(r'^/fish_prices/$', views.fish_prices),
+		url(r'^/pescado_precios/$', views.fish_prices),
+		url(r'^/addfish/$', views.add_fish_prices),
+		url(r'^/biz_without_photo/$', views.missing_photo_list),
+		url(r'^/delfish/(?P<fishid>.+)/$', views.del_fish_price),
 )
 
