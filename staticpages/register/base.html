@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta keywords="san juan del sur, directory, register business">
+
+	<title>SJDS Directory | Register New Business</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- GOOGLE FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,800%7COpen+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
+
+<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-65170447-1', 'auto');
+		ga('send', 'pageview');
+
+</script>
+
+  <!--[if IE 9]>
+    <script src="js/media.match.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<div id="main-wrapper">
+
+  <header id="header">
+    <div class="header-top-bar">
+      <div class="container">
+        <!-- HEADER-LOGIN -->
+        <div class="header-login">
+
+          <a href="#" class=""><i class="fa fa-power-off"></i> Login</a>
+
+          <div>
+            <form action="#">
+              <input type="text" class="form-control" placeholder="Username">
+              <input type="password" class="form-control" placeholder="Password">
+              <input type="submit" class="btn btn-default" value="Login">
+              <a href="#" class="btn btn-link">Forgot Password?</a>
+            </form>
+          </div>
+
+        </div> <!-- END .HEADER-LOGIN -->
+
+        <!-- HEADER REGISTER -->
+        <div class="header-register">
+          <a href="#" class=""><i class="fa fa-plus-square"></i> Register</a>
+
+          <div>
+            <form action="#">
+              <input type="text" class="form-control" placeholder="Username">
+              <input type="email" class="form-control" placeholder="Email">
+              <input type="password" class="form-control" placeholder="Password">
+              <input type="submit" class="btn btn-default" value="Register">
+            </form>
+          </div>
+
+        </div> <!-- END .HEADER-REGISTER -->
+
+        <!-- HEADER-LOG0 -->
+        <div class="header-logo text-center">
+					<a href="index.html"><img height="40px" src="img/sjds-logo.svg" /></a>
+        </div>
+        <!-- END HEADER LOGO -->
+
+        <!-- HEADER-SOCIAL -->
+        <div class="header-social">
+          <a href="#">
+            <span><i class="fa fa-share-alt"></i></span>
+            <i class="fa fa-chevron-down social-arrow"></i>
+          </a>
+
+          <ul class="list-inline">
+            <li class="active"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+          </ul>
+        </div>
+        <!-- END HEADER-SOCIAL -->
+
+        <!-- HEADER-LANGUAGE -->
+        <div class="header-language">
+          <a href="#">
+            <span>EN</span>
+            <i class="fa fa-chevron-down"></i>
+          </a>
+
+          <ul class="list-unstyled">
+            <li class="active"><a href="#">EN</a></li>
+            <li><a href="#">FR</a></li>
+            <li><a href="#">PT</a></li>
+            <li><a href="#">IT</a></li>
+          </ul>
+        </div> <!-- END HEADER-LANGUAGE -->
+
+        <!-- CALL TO ACTION -->
+        <div class="header-call-to-action">
+          <a href="#" class="btn btn-default"><i class="fa fa-plus"></i> Add Listing</a>
+        </div><!-- END .HEADER-CALL-TO-ACTION -->
+
+      </div><!-- END .CONTAINER -->
+    </div>
+    <!-- END .HEADER-TOP-BAR -->
+
+    <!-- HEADER SEARCH SECTION -->
+    <div class="header-search">
+      <div class="header-search-bar">
+        <form action="/search-result.html" method="GET">
+
+          <div class="search-toggle">
+            <div class="container">
+              <div class="distance-range">
+                <p>
+                  <label for="amount-search">Distance:</label>
+                  <input type="text" id="amount-search">
+                </p>
+
+                <div id="slider-range-search"></div>
+              </div>  <!-- end #distance-range -->
+
+              <div class="distance-range">
+                <p>
+                  <label for="amount-search">Days published:</label>
+                  <input type="text" id="amount-search-day">
+                </p>
+
+                <div id="slider-range-search-day"></div>
+              </div>  <!-- end #distance-range -->
+
+              <p>Location:</p>
+              <div class="select-country">
+                <select class="" data-placeholder="-Select Country-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                </select>
+              </div>
+
+              <div class="region">
+                <input type="text" placeholder="-Region-">
+              </div>
+
+              <div class="address">
+                <input type="text" placeholder="-Address-">
+              </div>
+
+              <div class="category-search">
+                <select class="" data-placeholder="-Select category-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                </select>
+              </div>
+
+              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+
+            </div>
+          </div>  <!-- END .search-toggle -->
+
+
+          <div class="container">
+
+            <div class="search-value">
+              <div class="keywords">
+                <input type="text" autocomplete="off" class="form-control" id="search-keyword" name="q" placeholder="Search for something">
+              </div>
+<!--
+              <div class="select-location">
+                <select class="" data-placeholder="-Select location-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                  <option value="option4">option 4</option>
+                </select>
+              </div>
+
+              <div class="category-search">
+                <select class="" data-placeholder="-Select category-">
+                  <option value="option1">option 1</option>
+                  <option value="option2">option 2</option>
+                  <option value="option3">option 3</option>
+                  <option value="option4">option 4</option>
+                </select>
+              </div>
+							-->
+
+              <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </div> <!-- END .CONTAINER -->
+        </form>
+      </div> <!-- END .header-search-bar -->
+
+    </div> <!-- END .SEARCH and slide-section -->
+
+
+    <div class="header-nav-bar">
+      <div class="container">
+        <nav>
+
+          <button><i class="fa fa-bars"></i></button>
+
+          <ul class="primary-nav list-unstyled">
+            <li><a href="/">Home<i class="fa fa-angle-down"></i></a> </li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div> <!-- end .container -->
+    </div> <!-- end .header-nav-bar -->
+  </header> <!-- end #header -->
+
+
+	<div id="page-content">
+		<div class="container">
+			<div class="page-content">
+				<div class="row">
+				<div class="row">
+					<div class="col-sm-offset-2 col-sm-10"><h2>Add a Business</h2></div>
+					<form class="form-horizontal" action="/addbusiness/" method="POST" enctype="multipart/form-data" id="addform">
+						<div class="form-group">
+							<label for="bName" class="col-sm-2 control-label">Business Name</label>
+							<div class="col-sm-10">
+								<input type="text" name="bName" class="input-border form-control" id="bName" placeholder="Business Name" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bDesc" class="col-sm-2 control-label">Business Description</label>
+							<div class="col-sm-10">
+								<p>Provide a description of the business, its' products and / or services along with the hours of operation.</p>
+								<textarea name="bDesc" rows="10" class="input-border form-control" id="bDesc"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bTakeCredit" class="col-sm-2 control-label">Take Credit</label>
+							<div class="col-sm-10">
+								<p>Does this business take credit cards?</p>
+								<div class="takecredit">
+								Yes <input type="radio" name="bTakeCredit" class="input-border" style="width:40px;" id="bTakeCredit" value="1" />
+								</div>
+								<div class="takecredit">
+								No <input type="radio" name="bTakeCredit" class="input-border" style="width:40px;" id="bTakeCredit2" value="0" />
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bPhone" class="col-sm-2 control-label">Phone</label>
+							<div class="col-sm-10">
+								<input type="text" name="bPhone" class="input-border form-control" id="bPhone" placeholder="(505) 5558-3337" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bAltPhone" class="col-sm-2 control-label">Alt Phone</label>
+							<div class="col-sm-10">
+								<input type="text" name="bAltPhone" class="input-border form-control" id="bAltPhone" placeholder="(505) 5558-3337" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bAltPhone2" class="col-sm-2 control-label">Alt Phone 2</label>
+							<div class="col-sm-10">
+								<input type="text" name="bAltPhone2" class="input-border form-control" id="bAltPhone2" placeholder="(505) 5558-3337" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bEmail" class="col-sm-2 control-label">Email</label>
+							<div class="col-sm-10">
+								<input type="email" name="bEmail" class="input-border form-control" id="bEmail" placeholder="gatonegro@gmail.com" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bWebsite" class="col-sm-2 control-label">Website</label>
+							<div class="col-sm-10">
+								<input type="text" name="bWebsite" class="input-border form-control" id="bWebsite" placeholder="http://www.elgatonegro.com" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="facebook" class="col-sm-2 control-label">Facebook</label>
+							<div class="col-sm-10">
+								<input type="text" name="facebook" class="input-border form-control" id="facebook" placeholder="http://www.facebook.com/elgato" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="twitter" class="col-sm-2 control-label">Twitter</label>
+							<div class="col-sm-10">
+								<input type="text" name="twitter" class="input-border form-control" id="twitter" placeholder="http://www.twitter.com/elgato" />
+							</div>
+						</div>
+								<input type="hidden" name="bLat" class="input-border form-control" id="bLat" placeholder="GPS Latitude" />
+								<input type="hidden" name="bLon" class="input-border form-control" id="bLon" placeholder="GPS Longitude" />
+						<div class="categories_div"></div>
+						</div>
+						<div class="form-group">
+							<label for="bCategory" class="col-sm-2 control-label">Category</label>
+							<div class="col-sm-10">
+								<p>Choose a category that best represents this business</p>
+								<!-- Available Categories -->
+								<div id="category_list"></div>
+								<input name="bCategory" id="place_select">
+								<input type="hidden" id="hidden-category" name="hidden_category" value="0" />
+								<br /><br />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bProducts" class="col-sm-2 control-label">Products or Services</label>
+							<div class="col-sm-10">
+								<p>List as many products &amp; services that this business offers.  These items are all searchable by users of the site.</p>
+								<input type="text" name="bProducts" class="input-border form-control" id="bProducts" placeholder="Products must be seperated by commas" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bPic1" class="col-sm-2 control-label">Photo 1:</label>
+							<div class="col-sm-10">
+								<p>Please try to provide at least one picture facing the door of this business.  Photos of your product or services will be helpful as well.</p>
+								<input type="file" name="file1" class="input-border form-control" id="bPic1" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bPic2" class="col-sm-2 control-label">Photo 2:</label>
+							<div class="col-sm-10">
+								<input type="file" name="file2" class="input-border form-control" id="bPic2" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bPic3" class="col-sm-2 control-label">Photo 3:</label>
+							<div class="col-sm-10">
+								<input type="file" name="file3" class="input-border form-control" id="bPic3" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="bPic4" class="col-sm-2 control-label">Photo 4:</label>
+							<div class="col-sm-10">
+								<input type="file" name="file4" class="input-border form-control" id="bPic4" />
+							</div>
+						</div>
+						<div style="height: 30px;"></div>
+						<div class="row">
+							<div class="col-sm-offset-2 col-sm-10" style="margin-bottom: 20px;">
+								<p>VERY IMPORTANT: click on the map below the location of this business.  If this business does not have a location select a location in the water.</p>
+								<div id="map-canvas"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<input type="hidden" name="hidden-bid" id="hidden-bid" value="" />
+								<button type="submit" id="addbtn" class="btn btn-default">Submit Business</button>
+							</div>
+						</div>
+						</form>
+				</div> <!-- end .add-company-form -->
+			</div> <!-- end .page-content -->
+		</div> <!-- end .container -->
+
+	</div> <!-- end #page-content -->
+
+
+  <footer id="footer">
+    <div class="main-footer">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-3 col-sm-6">
+            <div class="about-globo">
+              <h3>About SJDS Directory</h3>
+
+              <div class="footer-logo">
+                <span></span> <!-- This content for overlay effect -->
+              </div>
+
+              <p>The SJDS Directory is making a concerted effort to provide a method to find each and every business that is in the SJDS area. We hope to help as many businesses in SJDS as humanly possible.</p>
+
+            </div> <!-- End .about-globo -->
+          </div> <!-- end Grid layout-->
+
+          <div class="col-md-3 col-sm-6">
+            <h3>Featured Listings</h3>
+
+						<div class="latest-post"></div>
+          </div> <!-- end Grid layout-->
+
+          <div class="col-md-3 col-sm-6 clearfix">
+            <div class="popular-categories">
+              <h3>Popular Categories</h3>
+
+              <ul>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i>Airport Transportation</a></li>
+                <li><a href="#"><i class="fa fa-paper-plane-o"></i>Upcoming Events</a></li>
+                <li><a href="#"><i class="fa fa-cogs"></i>Food &amp; Drinks</a></li>
+                <li><a href="#"><i class="fa fa-book"></i>Clothing</a></li>
+                <li><a href="#"><i class="fa fa-building-o"></i>Real Estate</a></li>
+              </ul>
+            </div> <!-- end .popular-categories-->
+          </div> <!-- end Grid layout-->
+
+          <div class="col-md-3 col-sm-6">
+            <div class="newsletter">
+              <h3>Newsletter</h3>
+
+              <form action="#">
+                <input type="Email" placeholder="Email address">
+                <button><i class="fa fa-plus"></i></button>
+              </form>
+
+              <h3>Keep In Touch</h3>
+
+              <ul class="list-inline">
+                <li><a href="http://www.facebook.com/sjdsdirectory"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/sjdsdirectory"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div> <!-- end .newsletter-->
+
+          </div> <!-- end Grid layout-->
+        </div> <!-- end .row -->
+      </div> <!-- end .container -->
+    </div> <!-- end .main-footer -->
+
+    <div class="copyright">
+      <div class="container">
+        <p>Copyright 2015 &copy; kharron.com. All rights reserved. Powered by  <a href="#">Kharron.com</a></p>
+
+        <ul class="list-inline">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+					<!--
+          <li><a href="#">Shortcodes</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Pricing</a></li>
+					-->
+          <li><a href="/contact-us.html">Contact</a></li>
+        </ul>
+      </div> <!-- END .container -->
+    </div> <!-- end .copyright-->
+  </footer> <!-- end #footer -->
+
+</div> <!-- end #main-wrapper -->
+
+<!-- Scripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script src="/js/jquery.ba-outside-events.min.js"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="/js/gomap.js"></script>
+<script type="text/javascript" src="/js/gmaps.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.js"></script>
+<script src="/js/scripts.js"></script>
+<script src="/js/search.js"></script>
+<script src="/js/featured.js"></script>
+<script>
+
+</script>
+<script>
+
+	//Global Var
+	var main_image_for_biz;
+
+	/* Go and get information on business based on slug or name or id */
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+				return vars;
+	}
+
+	function fill_page(comp){
+		$(".company-name").html(comp['name']);
+		$("#main-company-name").html(comp['name']);
+		$(".company-text p").html(comp['description'].replace("\n", "<br /><br />"));
+		if (comp['products']){
+			$("#products-list").replaceWith('<ul id="products-list" class="list-inline"></ul>');
+			for(i=0; i<comp['products'].length;i++){
+				$("#products-list").append('<li><a href="/search-result.html?product=' + encodeURIComponent(comp['products'][i]) + '">' + comp['products'][i] + '</a></li>');
+			}
+		}
+		if (comp['phone']){
+			$(".phone-num-1").html(comp['phone']);
+		} else {
+			$(".phone-num-1").parent().html('');
+		}
+		if (comp['alt_phone']){
+			$(".alt-phone-1").html(comp['alt_phone']);
+			} else {
+			$('.alt-phone-1').parent().html('');
+		}
+		if (comp['alt2_phone']){
+			$(".alt-phone-2").html(comp['alt2_phone']);
+			} else {
+			$(".alt-phone-2").parent().html('');
+		}
+		if (comp['website']){
+			$(".website").html("<a href='" + comp['website'] + "' target='_blank'>" + comp['website'] + "</a>");
+			} else {
+			$(".website").parent().html('');
+		}
+		if (comp['email']){
+			$(".email").html(comp['email']);
+			} else {
+			$(".email").parent().html('');
+		}
+		if (comp['facebook']){
+			$(".fa-facebook").parent().attr("href", comp['facebook']);
+			} else {
+			$(".fa-facebook").parent().html('');
+		}
+		if (comp['twitter']){
+			$(".fa-twitter").parent().attr("href", comp['twitter']);
+			} else {
+			$(".fa-twitter").parent().parent().remove();
+		}
+
+		hours = comp['description'].split("Hours");
+		if (hours[1]){
+			$(".hours").html("Hours" + hours[1]);
+		}
+			//var img = '<img src="img/content/post-img-1.jpg" alt="">';
+			bid = comp['id'];
+			if (comp['photos'].length){
+				main_image_for_biz = "http://api.sjdsdirectory.com/media/business_images/" + bid + "/" + encodeURIComponent(comp['photos'][0]);
+				img = '<img src="http://api.sjdsdirectory.com/media/business_images/' + bid + '/' + comp['photos'][0] + '" />';
+				imageresize(); // This will update the background image 
+				$("#logo-image").replaceWith('<div class="logo-image" id="logo-image">' + img + '</div>');
+			}
+		
+  // company map initialization
+
+  $("#company_map_canvas").goMap({
+
+    maptype: 'ROADMAP',
+    zoom: 18,
+    scrollwheel: false,
+    markers: [{
+        latitude: comp['gps_lat'],
+        longitude: comp['gps_long'],
+        icon: 'img/content/company-pin.png',
+        html: 'SJDS Directory'
+      }]
+  });
+	}
+
+	$(document).ready(function(){ 
+		$("body").on("click", "#gmap-lg-button", function(){
+			$("#gmap-button").click();
+		});
+		id = getUrlVars()['id'];
+		$.ajax({
+			type: "GET",
+			url: "http://api.sjdsdirectory.com/getbusiness/",
+			data: "id=" + id,
+			success: function(msg){
+				comp_json = JSON.parse(msg);
+				fill_page(comp_json);
+			}
+		});
+		var w = window.innerWidth;
+		imageresize();
+		// make is so that the background image is the store image and easier to see
+		$(window).resize(imageresize);
+	});
+
+	function imageresize(){ 
+		// Change the regular small image to the background image
+		var w = window.innerWidth;
+		if (w<681){
+			if (main_image_for_biz){
+				$("#logo-image.logo-image").css("display", "none");
+				$(".general-view").css("background-image", "url(" + main_image_for_biz + ")"); 
+				$(".dark-overlay").css("background-color", "rgba(0, 0, 0, 0.0)");
+				$(".logo-image").css("background", "rgba(0, 0, 0, 0.0)");
+			} else {
+				$("#logo-image.logo-image").css("display", "none");
+				$(".dark-overlay").css("background-color", "rgba(0, 0, 0, 0.0)");
+				$(".logo-image").css("background", "rgba(0, 0, 0, 0.0)");
+			} 
+		} else {
+			$(".general-view").css("background-image", "url(img/content/post-img-1.jpg)");
+			$("#logo-image.logo-image").css("display", "block");
+		}
+	}
+</script>
+<script>
+  // gmap for street view
+  panorama = GMaps.createPanorama({
+    el: '#company_map_canvas_street',
+    lat : 11.402349,
+    lng : -85.684578,
+  });
+</script>
+</body>
+</html>

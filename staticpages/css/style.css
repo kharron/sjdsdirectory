@@ -7282,13 +7282,13 @@ fieldset[disabled] .btn-default-inverse.active {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 3px;
-  border: 1px solid #c4c4c4;
-  color: #d0d0d0;
+  border: 1px solid #00CC99;
+  color: #00CC99;
   font-weight: 600;
   text-transform: capitalize;
 }
 .company-profile .company-service li a:hover {
-  color: #aaaaaa;
+  color: #90FF90;
 }
 .company-profile .company-ratings {
   position: relative;
@@ -8122,4 +8122,10 @@ border-radius: 50%;
 }
 .fishies-contact {
 	color: #00c2ff;
+}
+
+.takecredit {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
