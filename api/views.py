@@ -12,6 +12,8 @@ from django.db import connection
 import random
 
 def index(request):
+                biz = get_categories_for_biz_dict(1)
+                return HttpResponse(biz)
 		print_this = request.GET['test']
 		return HttpResponse('Default Index Page ' + print_this)
 
@@ -234,8 +236,13 @@ def add_to_cat(bid, cat1):
 				cb.save()
 		return 1
 
-def get_categories_for_biz(bid):
-		cat = Categories.objects.raw("select c.id, c.name from admin_categories c Inner Join admin_categoriesbusiness cb on cb.name = c.id where cb.business_id = %s" % [bid])
+def get_categories_for_biz_dict(bid):
+        bid = str(bid)
+        cats = Categories.objects.raw("select c.id, c.name from admin_categories c Inner Join admin_categoriesbusiness cb on cb.name = c.id where cb.business_id = %s" % bid)
+        cat_list = []
+        for cat in cats:
+                cat_list.append(cat.name)
+        return cat_list
 
 def generate_catlist():
 		# Generates a list of available categories
@@ -350,6 +357,7 @@ def category_lookup(request, category_name=None):
 										biz[b.id]['name'] = b.name
 										biz[b.id]['description'] = b.description
 										biz[b.id]['photos'] = get_photos(b.id)
+                                                                                biz[b.id]['cats'] = get_categories_for_biz_dict(b.id)
 				biz_json = json.dumps(biz)
 				end_time = time.time()-start_time
 				time_info = {}
@@ -474,6 +482,7 @@ def search_result(request):
 				for r in results:
 						biz[i] = {}
 						biz[i]['id'] = r[0]
+                                                biz[i]['cats'] = get_categories_for_biz_dict(r[0])
 						biz[i]['name'] = r[1]
 						biz[i]['description'] = r[2]
 						biz[i]['photos'] = get_photos(r[0])

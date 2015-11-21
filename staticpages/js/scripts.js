@@ -387,7 +387,6 @@
   // company-heading slider content
   //--------------------------------------------------------
   $('.button-content button').on('click',function(e) {
-    console.log('clickes');
 
     if ($(this).hasClass('general-view-btn')) {
       $(this).addClass('active')

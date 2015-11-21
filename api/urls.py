@@ -2,7 +2,7 @@ from django.conf.urls import patterns, url
 from api import views
 
 urlpatterns = patterns('',
-		url(r'^/$', views.index),
+		url(r'^$', views.index),
 		url(r'^addbusiness/$', views.add_business),
 		url(r'^delbusiness_es/$', views.delete_business_es),
 		url(r'^addespanol/$', views.add_business_es),

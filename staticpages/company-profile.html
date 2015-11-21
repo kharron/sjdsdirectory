@@ -243,7 +243,7 @@
           <button><i class="fa fa-bars"></i></button>
 
           <ul class="primary-nav list-unstyled">
-            <li><a href="/">Home<i class="fa fa-angle-down"></i></a> </li>
+            <li><a href="/">Home</i></a> </li>
             <li><a href="about-us.html">About Us</a></li>
             <li><a href="contact-us.html">Contact Us</a></li>
           </ul>
@@ -278,6 +278,7 @@
                 </div>
 								<button id="gmap-lg-button" style="width: 100%; margin-top: 40px;" class="btn btn-primary">View on Map</button>
 								<div id="company-images"></div>
+								<div class="clearfix"></div>
 
                 <div class="company-text">
                   <p>
@@ -573,6 +574,12 @@
 				img = '<img src="http://api.sjdsdirectory.com/media/business_images/' + bid + '/' + comp['photos'][0] + '" />';
 				imageresize(); // This will update the background image 
 				$("#logo-image").replaceWith('<div class="logo-image" id="logo-image">' + img + '</div>');
+				if (comp['photos'].length >= 1){
+					for (i=0; i<comp['photos'].length; i++){
+						img = '<img src="http://api.sjdsdirectory.com/media/business_images/' + bid + '/' + comp['photos'][i] + '" />';
+						$("#company-images").append('<div id="company-images">' + img + '</div>');
+					} 
+				}
 			}
 		
   // company map initialization
@@ -580,7 +587,7 @@
   $("#company_map_canvas").goMap({
 
     maptype: 'ROADMAP',
-    zoom: 18,
+    zoom: 17,
     scrollwheel: false,
     markers: [{
         latitude: comp['gps_lat'],
