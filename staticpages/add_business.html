@@ -98,7 +98,7 @@
 
 				<!-- CALL TO ACTION -->
 				<div class="header-call-to-action">
-					<a href="#" class="btn btn-default"><i class="fa fa-plus"></i> Add Listing</a>
+					<a href="/add_business.html" class="btn btn-default"><i class="fa fa-plus"></i> Add Listing</a>
 				</div><!-- END .HEADER-CALL-TO-ACTION -->
 
 			</div><!-- END .CONTAINER -->
@@ -181,7 +181,7 @@
           <button><i class="fa fa-bars"></i></button>
 
           <ul class="primary-nav list-unstyled">
-            <li class="bg-color"><a href="#">Home<i class="fa fa-angle-down"></i></a> </li>
+            <li class="bg-color"><a href="/">Home</a> </li>
 <!--
             <li class=""><a href="#">Company<i class="fa fa-angle-down"></i></a>
 
@@ -227,10 +227,12 @@
 				<div class="row">
 				<div class="row">
 					<div class="col-sm-offset-2 col-sm-10"><h2>Add a Business</h2></div>
-					<form class="form-horizontal" action="/addbusiness/" method="POST" enctype="multipart/form-data" id="addform">
+					<form class="form-horizontal" action="http://api.sjdsdirectory.com/addbusiness/" method="POST" enctype="multipart/form-data" id="addform">
+						<input type="hidden" name="client" value="0" />
 						<div class="form-group">
 							<label for="bName" class="col-sm-2 control-label">Business Name</label>
 							<div class="col-sm-10">
+								<a name="bName"></a>
 								<input type="text" name="bName" class="input-border form-control" id="bName" placeholder="Business Name" />
 							</div>
 						</div>
@@ -341,7 +343,7 @@
 							</div>
 						</div>
 						<div style="height: 30px; display:block;"></div>
-							<h2>Location</h2>
+							<h2 class="location-header">Location</h2>
 							<p>Touch the location of your company on the map below.  Users will use this to find your business</p>
 							<div class="col-sm-offset-2 col-sm-10" style="margin-bottom: 20px;">
 								<div id="map-canvas"></div>
@@ -349,7 +351,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<input type="hidden" name="hidden-bid" id="hidden-bid" value="" />
-								<button type="submit" id="addbtn" class="btn btn-default">Submit Business</button>
+								<button id="addbtn" class="btn btn-default">Submit Business</button>
 							</div>
 						</div>
 						</form>
@@ -360,107 +362,84 @@
 	</div> <!-- end #page-content -->
 
 
-	<footer id="footer">
-		<div class="main-footer">
+  <footer id="footer">
+    <div class="main-footer">
 
-			<div class="container">
-				<div class="row">
+      <div class="container">
+        <div class="row">
 
-					<div class="col-md-3 col-sm-6">
-						<div class="about-globo">
-							<h3>About Globo</h3>
+          <div class="col-md-3 col-sm-6">
+            <div class="about-globo">
+              <h3>About SJDS Directory</h3>
 
-							<div class="footer-logo">
-								<a href="#"><img src="img/footer_logo.png" alt=""></a>
-								<span></span> <!-- This content for overlay effect -->
-							</div>
+              <div class="footer-logo">
+                <span></span> <!-- This content for overlay effect -->
+              </div>
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue,
-								suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.</p>
+              <p>The SJDS Directory is making a concerted effort to provide a method to find each and every business that is in the SJDS area. We hope to help as many businesses in SJDS as humanly possible.</p>
 
-						</div> <!-- End .about-globo -->
-					</div> <!-- end Grid layout-->
+            </div> <!-- End .about-globo -->
+          </div> <!-- end Grid layout-->
 
-					<div class="col-md-3 col-sm-6">
-						<h3>Latest From Blog</h3>
+          <div class="col-md-3 col-sm-6">
+            <h3>Featured Listings</h3>
 
-						<div class="latest-post clearfix">
-							<div class="post-image">
-								<img src="img/content/latest_post_1.jpg" alt="">
+						<div class="latest-post"></div>
+          </div> <!-- end Grid layout-->
 
-								<p><span>12</span>Sep</p>
-							</div>
+          <div class="col-md-3 col-sm-6 clearfix">
+            <div class="popular-categories">
+              <h3>Popular Categories</h3>
 
-							<h4><a href="#">Post Title Goes Here</a></h4>
+              <ul>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i>Airport Transportation</a></li>
+                <li><a href="#"><i class="fa fa-paper-plane-o"></i>Upcoming Events</a></li>
+                <li><a href="#"><i class="fa fa-cogs"></i>Food &amp; Drinks</a></li>
+                <li><a href="#"><i class="fa fa-book"></i>Clothing</a></li>
+                <li><a href="#"><i class="fa fa-building-o"></i>Real Estate</a></li>
+              </ul>
+            </div> <!-- end .popular-categories-->
+          </div> <!-- end Grid layout-->
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-						</div>
+          <div class="col-md-3 col-sm-6">
+            <div class="newsletter">
+              <h3>Newsletter</h3>
 
-						<div class="latest-post clearfix">
-							<div class="post-image">
-								<img src="img/content/latest_post_2.jpg" alt="">
+              <form action="#">
+                <input type="Email" placeholder="Email address">
+                <button><i class="fa fa-plus"></i></button>
+              </form>
 
-								<p><span>09</span>Sep</p>
-							</div>
+              <h3>Keep In Touch</h3>
 
-							<h4><a href="#">Post Title Goes Here</a></h4>
+              <ul class="list-inline">
+                <li><a href="http://www.facebook.com/sjdsdirectory"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/sjdsdirectory"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div> <!-- end .newsletter-->
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-						</div>
-					</div> <!-- end Grid layout-->
+          </div> <!-- end Grid layout-->
+        </div> <!-- end .row -->
+      </div> <!-- end .container -->
+    </div> <!-- end .main-footer -->
 
-					<div class="col-md-3 col-sm-6 clearfix">
-						<div class="popular-categories">
-							<h3>Popular Categories</h3>
+    <div class="copyright">
+      <div class="container">
+        <p>Copyright 2015 &copy; senorcoders.com. All rights reserved. Powered by  <a href="#">Senorcoders.com</a></p>
 
-							<ul>
-								<li><a href="#"><i class="fa fa-shopping-cart"></i>E-commerce</a></li>
-								<li><a href="#"><i class="fa fa-paper-plane-o"></i>Entertainment</a></li>
-								<li><a href="#"><i class="fa fa-cogs"></i>Industry</a></li>
-								<li><a href="#"><i class="fa fa-book"></i>Libraries &amp; Public Office</a></li>
-								<li><a href="#"><i class="fa fa-building-o"></i>Real Estate</a></li>
-							</ul>
-						</div> <!-- end .popular-categories-->
-					</div> <!-- end Grid layout-->
-
-					<div class="col-md-3 col-sm-6">
-						<div class="newsletter">
-							<h3>Newsletter</h3>
-
-							<form action="#">
-								<input type="Email" placeholder="Email address">
-								<button><i class="fa fa-plus"></i></button>
-							</form>
-
-							<h3>Keep In Touch</h3>
-
-							<ul class="list-inline">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-							</ul>
-						</div> <!-- end .newsletter-->
-
-					</div> <!-- end Grid layout-->
-				</div> <!-- end .row -->
-			</div> <!-- end .container -->
-		</div> <!-- end .main-footer -->
-
-		<div class="copyright">
-			<div class="container">
-				<p>Copyright 2015 &copy; SJDS Directory. All rights reserved. Powered by  <a href="#">Kharron</a></p>
-
-				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Pricing</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div> <!-- END .container -->
-		</div> <!-- end .copyright-->
-	</footer> <!-- end #footer -->
+        <ul class="list-inline">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us.html">About Us</a></li>
+					<!--
+          <li><a href="#">Shortcodes</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Pricing</a></li>
+					-->
+          <li><a href="/contact-us.html">Contact</a></li>
+        </ul>
+      </div> <!-- END .container -->
+    </div> <!-- end .copyright-->
+  </footer> <!-- end #footer -->
 
 </div> <!-- end #main-wrapper -->
 
@@ -472,15 +451,8 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl.carousel.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/featured.js"></script>
 <script>
-
-	 function update_bizlist(cat_json, div_name){
-		$("#"+ div_name).replaceWith('<select id="' + div_name + '" name="bCategory" class="form-control input-border">');
-			for (i=0; i<cat_json['count']; i++){
-			 $("#"+ div_name).append("<option value='" + cat_json[i]['id'] + "'>" + cat_json[i]['name'] + "</option>");
-			};
-		 $('#'+ div_name).append("</select>");
-	 }
 
 	 function update_catlist(cat_json, div_name){
 		 keys_arr = Object.keys(cat_json);
@@ -502,65 +474,6 @@
 				update_catlist(cat_json, 'place_select');
 			}
 		});
-	 }
-
-	function add_photos(photo_arr, bid){
-		arr = photo_arr;
-		html = '';
-		for (i=0; i<arr.length; i++){
-			html += "<img src='/media/business_images/" + bid + "/" + arr[i] + "' style='margin-left: 20px; max-width: 200px;' />";
-		}
-		$("#bPic1").parent().parent().prepend(html);
-	}
-
-	function get_biz(bid){
-		 bid = encodeURIComponent(bid);
-		 $.ajax({
-			 type: 'POST',
-			 url: 'http://api.sjdsdirectory.com/editbusiness/',
-			 data: 'bid=' + bid,
-			 success: function(msg){
-				 // Change to Edit Cat
-				 biz_info = JSON.parse(msg);
-				 prod_arr = biz_info['products'];
-				 photo_arr = biz_info['photos'];
-				 $("#bProducts").val(prod_arr);
-				 $("#bName").val(biz_info['name']);
-				 $("#bDesc").val(biz_info['description']);
-				 $("#bPhone").val(biz_info['phone']);
-				 $("#bAltPhone").val(biz_info['alt_phone']);
-				 $("#bAltPhone2").val(biz_info['alt2_phone']);
-				 $("#bEmail").val(biz_info['email']);
-				 $("#bWebsite").val(biz_info['website']);
-				 $("#facebook").val(biz_info['facebook']);
-				 $("#twitter").val(biz_info['twitter']);
-				 if (biz_info['take_credit'] == 1){
-					 $("#bTakeCredit").prop('checked', true);
-				 } else {
-					 $("#bTakeCredit2").prop('checked', true); 
-				 }
-				 $("#bLat").val(biz_info['gps_lat']);
-				 $("#bLon").val(biz_info['gps_long']);
-				 //$("#place_select").prepend('<option value="' + biz_info['cat_info']['id'] + '" selected>' + biz_info['cat_info']['name'] + '</option>');
-				 $("#hidden-bid").val(biz_info['id']); 
-				 $("#addbtn").attr("id", "updatebtn");
-				 $("#updatebtn").html('Update Business');
-				 $("#addform").attr("action", "/updatebusiness/")
-				 if (biz_info['cat_info']){
-					 // place categories above category drop down.
-					 keys_arr = Object.keys(biz_info['cat_info']['name']);
-					 keys_arr.forEach(function(i){
-						 $("#category_list").before('<a href="/delete_from_cat/' + biz_info['cat_info']['name'][i]['id'] + '/"><button class="cat_button btn btn-success" type="button"><i class="glyphicon glyphicon-remove"></i> ' + biz_info['cat_info']['name'][i]['name'] + '</button></a>'); 
-					 });
-					 $("#category_list").append("<br /><br />");
-					 
-				 }
-				 if (photo_arr){
-				   add_photos(photo_arr, biz_info['id']);
-				 }
-				 loadMarker(biz_info['gps_lat'], biz_info['gps_long']);
-			 }
-		 });
 	 }
 
 	$(document).ready(function(){
@@ -602,6 +515,30 @@
 			});
 		});
 
+	  $("body").on("click", "#addbtn", function(e){
+			e.preventDefault();
+			
+			// Check ensure the proper values have been inputted.
+			if ($("#bName").val().length < 2) {
+				$(".ab-error").remove();
+				$("#bName").before("<div class='ab-error'><div>A business needs a name.  Come one and fill it out.</div></div>");
+				var position = $("#bName").position().top;
+				$('body').scrollTop(position+60);
+				return;
+			}
+
+			// Check to make sure the lat and long were added using the map
+			if ($("#bLon").val().length < 1 || $("#bLat").val().length < 1){
+				$(".ab-error").remove();
+				$(".location-header").after("<div class='ab-error'><div>You	did not use the map to select your business location.  If you do not have an office put your location in the SJDS bay</div></div>");
+				var position = $(".location-header").position().top;
+				$('body').scrollTop(position+60);
+				return;
+			} 
+
+			$("#addform").submit();
+		});
+
 	  $("body").on("click", "#addbtn2", function(e){
 			e.preventDefault();
 			var bName = encodeURIComponent($("#bName").val());
@@ -617,7 +554,7 @@
 			var bAltPhone = $("#bAltPhone").val();
 			var bAltPhone2 = $("#bAltPhone2").val();
 			var bProducts = encodeURIComponent($("#bProducts").val());
-			data = "bName=" + bName + "&bDesc=" + bDesc + "&bEmail=" + bEmail + "&bWebsite=" + bWebsite + "&bLat=" + bLat + "&bLon=" + bLon + "&bCategory=" + bCategory + "&bPhone=" + bPhone + "&bAltPhone=" + bAltPhone + "&bAltPhone2=" + bAltPhone + "&bProducts=" + bProducts + "&facebook=" + facebook + "&twitter=" + twitter;
+			data = "bName=" + bName + "&bDesc=" + bDesc + "&bEmail=" + bEmail + "&bWebsite=" + bWebsite + "&bLat=" + bLat + "&bLon=" + bLon + "&bCategory=" + bCategory + "&bPhone=" + bPhone + "&bAltPhone=" + bAltPhone + "&bAltPhone2=" + bAltPhone + "&bProducts=" + bProducts + "&facebook=" + facebook + "&twitter=" + twitter + "&client=1";
 			$.ajax({
 				"type": "POST",
 				"url": "http://api.sjdsdirectory.com/addbusiness/",
@@ -627,35 +564,6 @@
 				}
 			})
 
-		});
-
-		$("#editbtn").click(function(e){
-			e.preventDefault();
-			bid = $("#place_select2").val();
-			get_biz(bid);
-		})
-
-		$("#delbtn").click(function(e){
-		// Delete a particular business
-			e.preventDefault();
-			var select = document.getElementById( "place_select2" );
-			if (confirm('Are you sure you want to delete')) {
-			var bid = select.options[select.selectedIndex].value;
-			$.ajax({
-				"type": "GET",
-				"url": "http://api.sjdsdirectory.com/deletebusiness/" + bid + "/",
-				"success": function(msg){
-					if (msg == 1){
-						alert("Deleted");
-						get_biz_list();
-					} else {
-						alert(msg);
-					}
-				}
-			})
-			} else {
-				//Do Nothing
-			}
 		});
 	});
 </script>

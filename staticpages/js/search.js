@@ -4,7 +4,7 @@
 			var html = '';
 			keys_arr.forEach(function(i){
 				html += '<div class="col-md-3 col-sm-4 col-xs-6"> <div class="category-item">';
-				html += '<a href="search-result.html?category=' + encodeURIComponent(cat_json[i]["name"]) + '"><i class="fa fa-' + cat_json[i]['image'] + '"></i>' + cat_json[i]['name'] + '</a> </div> </div>';
+				html += '<a href="search-result.html?category=' + encodeURIComponent(cat_json[i]["name"]) + '"><i class="fa fa-' + cat_json[i]['image'] + ' fa-lg"></i>' + cat_json[i]['name'] + '</a> </div> </div>';
 			});
 			$("#category-show").append(html); 
 	 }

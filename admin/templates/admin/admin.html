@@ -246,6 +246,15 @@
 				<div class="row">
 				<div class="row">
 					<div class="col-sm-offset-2 col-sm-10"><h2>Edit a Business</h2></div>
+					<form id="form-edit-business" class="form-horizontal" action="/activate" method="POST">
+						<div class="form-group">
+							<label for="bBusiness" class="col-sm-2 control-label">Activate Businesses</label>
+							<div class="col-sm-10">
+								<!-- Available Business -->
+								<div id="place_select3"></div>
+							</div>
+						</div>
+					</form>
 					<form id="form-edit-business" class="form-horizontal" action="#">
 						<div class="form-group">
 							<label for="bBusiness" class="col-sm-2 control-label">Current Businesses</label>
@@ -513,7 +522,7 @@
 <script>
 
 	 function update_bizlist(cat_json, div_name){
-		$("#"+ div_name).replaceWith('<select id="' + div_name + '" name="bCategory" class="form-control input-border">');
+		$("#"+ div_name).replaceWith('<select id="' + div_name + '" class="form-control input-border">');
 			for (i=0; i<cat_json['count']; i++){
 			 $("#"+ div_name).append("<option value='" + cat_json[i]['id'] + "'>" + cat_json[i]['name'] + "</option>");
 			};
@@ -538,6 +547,18 @@
 			'success': function(list){
 				cat_json = JSON.parse(list);
 				update_bizlist(cat_json, 'place_select2');
+			}
+		});
+	 }
+
+	 function get_inactive_biz(){
+		$("#place_select3").replaceWith("<span id='place_select3' class='spinner'></span>");
+		$.ajax({
+			'type': 'GET',
+			'url': 'http://api.sjdsdirectory.com/getbusinesses_inactive/',
+			'success': function(list){
+				cat_json = JSON.parse(list);
+				update_bizlist(cat_json, 'place_select3');
 			}
 		});
 	 }
@@ -614,8 +635,9 @@
 	 }
 
 	$(document).ready(function(){
-		get_biz_list();
-		get_cat_list();
+		get_biz_list(); // a list of all business
+		get_inactive_biz(); // a list of inactive businesses
+		get_cat_list(); // a list of all categories
 
 		$("body").on("change", "#place_select", function(){
 			$("#hidden-category").attr("value",$("#place_select").val());

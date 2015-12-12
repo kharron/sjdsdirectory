@@ -158,6 +158,14 @@ TEMPLATE_DIRS = (
 	'/www/sites/sjdsdirectory/search/templates',
 )
 
+EMAIL_HOST = "smtp.zoho.com"
+DEFAULT_FROM_EMAIL = "info@sjdsdirectory.com"
+EMAIL_HOST_USER = "info@sjdsdirectory.com"
+EMAIL_HOST_PASSWORD = "helium33"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 INSTALLED_APPS = (
 		'corsheaders',
     'django.contrib.auth',

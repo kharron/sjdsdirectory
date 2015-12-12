@@ -29,6 +29,7 @@ urlpatterns = patterns('',
 
 		#get businesses
 		url(r'^getbusinesses/$', views.get_businesses),
+		url(r'^getbusinesses_inactive/$', views.get_businesses_inactive),
 		url(r'^getbusinesses_order/$', views.get_businesses_order),
 		url(r'^getbusinesses_es/$', views.get_businesses_es),
 		url(r'^getbusiness/$', views.get_one_business),
@@ -42,6 +43,8 @@ urlpatterns = patterns('',
 		url(r'^updatebusiness/$', views.update_business),
 
 		url(r'^get_english_from_name/$', views.get_english_from_name),
+
+		url(r'^sendmail/$', views.sendmail),
 
 		url(r'^fish_prices/$', views.fish_prices),
     # Examples:

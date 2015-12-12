@@ -4,6 +4,7 @@ import time
 import json
 import os
 from django.core import serializers
+from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -19,33 +20,45 @@ def index(request):
 
 @csrf_exempt
 def add_business(request):
-		if request.method == "POST":
-				bName = request.POST['bName']
-				desc = request.POST['bDesc']
-				phone = request.POST['bPhone']
-				alt_phone = request.POST['bAltPhone']
-				alt_phone2 = request.POST['bAltPhone2']
-				if request.POST['hidden_category'] != '00': 
-						cat1 = request.POST['hidden_category']
-				lon = request.POST['bLon']
-				lat = request.POST['bLat']
-				website = request.POST['bWebsite']
-				facebook = request.POST['facebook']
-				twitter = request.POST['twitter']
-				take_credit = request.POST.get('bTakeCredit', 0)
-				email = request.POST['bEmail']
-				products = request.POST['bProducts']
-				if products.find(","):
-						products = request.POST['bProducts'].split(",")
-						loggit(products)
-				bid = add_business_info(bName, desc, lon, lat, website, phone, alt_phone, alt_phone2, email, facebook, twitter, take_credit)
-				if bid and cat1 and cat1 != '00':
-						add_cat = add_to_cat(bid, cat1) 
-				if products and bid:
-						update_products(bid, products)
-						
-				return HttpResponseRedirect('http://api.sjdsdirectory.com/admin')
-		return HttpResponse('http://api.sjdsdirectory.com/admin')
+        if request.method == "POST":
+                by_client = request.POST.get('client',0) # Check to see if this is sent from the website
+
+                # below set all of the info sent to creat a business
+                bName = request.POST['bName']
+                desc = request.POST['bDesc']
+                phone = request.POST['bPhone']
+                alt_phone = request.POST['bAltPhone']
+                alt_phone2 = request.POST['bAltPhone2']
+                if request.POST['hidden_category'] != '00': 
+                        cat1 = request.POST['hidden_category']
+                lon = request.POST['bLon']
+                lat = request.POST['bLat']
+                website = request.POST['bWebsite']
+                facebook = request.POST['facebook']
+                twitter = request.POST['twitter']
+                take_credit = request.POST.get('bTakeCredit', 0)
+                email = request.POST['bEmail']
+                products = request.POST['bProducts']
+                if products.find(","):
+                        products = request.POST['bProducts'].split(",")
+                        loggit(products)
+                active = 0
+                if by_client != "0":
+                    active = 1
+                bid = add_business_info(bName, desc, lon, lat, website, phone, alt_phone, alt_phone2, email, facebook, twitter, take_credit, active)
+                if bid and cat1 and cat1 != '00':
+                        add_cat = add_to_cat(bid, cat1) 
+                if products and bid:
+                        update_products(bid, products)
+                if request.FILES:
+                        update_photos(request, bid)
+                                
+                if by_client != 0:
+                        message = "Name of Business: %s\nEmail Address: %s" % (bName, email)
+                        send_email("New Business added to SJDSDirectory", message)
+                        return HttpResponseRedirect('http://www.sjdsdirectory.com/thanks')
+                return HttpResponseRedirect('http://api.sjdsdirectory.com/admin')
+        return HttpResponse('http://api.sjdsdirectory.com/admin')
 
 @csrf_exempt
 def update_business(request):
@@ -127,6 +140,7 @@ def handle_uploaded_file(f, name, bid):
 
 def check_for_folder(bid):
 		base_folder = '/www/sites/sjdsdirectory/media/business_images/'
+                bid = str(bid)
 		target_folder = base_folder + bid
 		if not os.path.exists(target_folder):
 				os.makedirs(target_folder, 0775)
@@ -149,8 +163,8 @@ def update_business_info(bid, bName, desc, lon, lat, bWebsite, phone, alt_phone,
 		b.save()
 
 
-def add_business_info(bName, desc, lon, lat, bWebsite, phone, alt_phone, alt_phone2, email, facebook, twitter, take_credit):
-		b = Business(name=bName, description=desc, gps_long=lon, gps_lat=lat, website=bWebsite, phone=phone, alt_phone=alt_phone, alt2_phone=alt_phone2, email=email, facebook=facebook, twitter=twitter, take_credit=take_credit)
+def add_business_info(bName, desc, lon, lat, bWebsite, phone, alt_phone, alt_phone2, email, facebook, twitter, take_credit, active):
+		b = Business(name=bName, description=desc, gps_long=lon, gps_lat=lat, website=bWebsite, phone=phone, alt_phone=alt_phone, alt2_phone=alt_phone2, email=email, facebook=facebook, twitter=twitter, take_credit=take_credit, active=active)
 		b.save()
 		return b.id
 
@@ -215,6 +229,8 @@ def get_business(bid):
 		biz['cat_info'] = cat
 		biz['products'] = prod
 		biz['photos'] = pics
+                biz['active'] = b.active
+                biz['featured'] = b.featured
 		return biz
 
 def update_to_cat(bid, cat1):
@@ -438,9 +454,9 @@ def update_category(request):
 def search_businesses(keyword):
 		if keyword.find(" ") > 0:
 				#results = Business.objects.raw('select id, name from admin_business where match(name, description) against("%s")' % keyword)
-				results = Business.objects.filter(name__icontains=keyword).order_by('name')[:3]
+				results = Business.objects.filter(name__icontains=keyword).filter(active=1).order_by('name')[:3]
 		else:
-				results = Business.objects.filter(name__icontains=keyword).order_by('name')[:3]
+				results = Business.objects.filter(name__icontains=keyword).filter(active=1).order_by('name')[:3]
 		return results
 
 def search_products(keyword):
@@ -459,7 +475,7 @@ def search_products(keyword):
 
 def search_all(keyword):
 		keyword = '%' + keyword + '%'
-		Sql = "select id, name, description from admin_business where id in (select b.business_id from admin_products a inner join admin_productsbusiness b on b.product_id = a.id where a.name like %s) or name like %s"
+		Sql = "select id, name, description, active from admin_business where id in (select b.business_id from admin_products a inner join admin_productsbusiness b on b.product_id = a.id where a.name like %s) or name like %s"
 		cursor = connection.cursor()
 		cursor.execute(Sql, (keyword,[keyword]))
 		prods = cursor.fetchall()
@@ -480,6 +496,7 @@ def search_result(request):
 				results = search_all(keyword)
 				biz = {}
 				for r in results:
+                                        if r[3] == 1:
 						biz[i] = {}
 						biz[i]['id'] = r[0]
                                                 biz[i]['cats'] = get_categories_for_biz_dict(r[0])
@@ -555,6 +572,20 @@ def get_businesses(request):
 		biz_json = json.dumps(bizs)
 		return HttpResponse(biz_json)
 
+def get_businesses_inactive(request):
+		''' Get all business and order them by name '''
+		biz = Business.objects.all().filter(active=0)
+		bizs = {}
+		i = 0
+		for b in biz:
+				bizs[i] = {}
+				bizs[i]['name'] = b.name
+				bizs[i]['id'] = b.id
+				i = i+1
+		bizs['count'] = i
+		biz_json = json.dumps(bizs)
+		return HttpResponse(biz_json)
+		
 def get_featured_biz():
 		fBiz = Business.objects.filter(featured=1)
 		fBizs = {}
@@ -807,4 +838,17 @@ def fish_prices(request):
                 i = i + 1
         fishJson = json.dumps(fishdict)
         return HttpResponse(fishJson)
+
+@csrf_exempt
+def sendmail(request):
+        if request.method == "POST":
+                action = "Message from sjdsdirectory"
+                message = 'Email: ' + request.POST['email'] + '\n' + 'Subject: ' + request.POST['subject'] + '\n' + request.POST['message']
+                send_email(action, message)
+        return HttpResponseRedirect("http://www.sjdsdirectory.com/thanks.html")
+
+def send_email(action, message):
+        # Send an email to info 
+        send_mail(action, message, 'info@sjdsdirectory.com',
+                ['kharronreid@gmail.com'], fail_silently=False)
 

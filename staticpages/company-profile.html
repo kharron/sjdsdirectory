@@ -27,6 +27,7 @@
   <!--[if IE 9]>
     <script src="js/media.match.min.js"></script>
   <![endif]-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -80,30 +81,14 @@
           </a>
 
           <ul class="list-inline">
-            <li class="active"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+            <li class="active"><a href="http://www.facebook.com/sjdsdirectory"><i class="fa fa-facebook-square"></i></a></li>
           </ul>
         </div>
         <!-- END HEADER-SOCIAL -->
 
-        <!-- HEADER-LANGUAGE -->
-        <div class="header-language">
-          <a href="#">
-            <span>EN</span>
-            <i class="fa fa-chevron-down"></i>
-          </a>
-
-          <ul class="list-unstyled">
-            <li class="active"><a href="#">EN</a></li>
-            <li><a href="#">FR</a></li>
-            <li><a href="#">PT</a></li>
-            <li><a href="#">IT</a></li>
-          </ul>
-        </div> <!-- END HEADER-LANGUAGE -->
-
         <!-- CALL TO ACTION -->
         <div class="header-call-to-action">
-          <a href="#" class="btn btn-default"><i class="fa fa-plus"></i> Add Listing</a>
+          <a href="/add_business.html" class="btn btn-default"><i class="fa fa-plus"></i> Add Listing</a>
         </div><!-- END .HEADER-CALL-TO-ACTION -->
 
       </div><!-- END .CONTAINER -->
@@ -341,7 +326,7 @@
             </ul>
 
             <div class="own-company">
-              <a href="#"><i class="fa fa-question-circle"></i>Call This Company</a>
+              <a class="call-company" href="#"><i class="fa fa-question-circle"></i>Call This Company</a>
             </div>
 
             <div class="contact-details">
@@ -529,7 +514,9 @@
 		}
 		if (comp['phone']){
 			$(".phone-num-1").html(comp['phone']);
+			$(".call-company").attr("href", "tel: " + comp['phone']);
 		} else {
+			$(".call-company").remove();
 			$(".phone-num-1").parent().html('');
 		}
 		if (comp['alt_phone']){
